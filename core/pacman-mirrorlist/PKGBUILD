@@ -1,0 +1,20 @@
+# $Id: PKGBUILD 42609 2009-06-17 01:51:42Z dan $
+# Maintainer: Dan McGee <dan@archlinux.org>
+
+pkgname=pacman-mirrorlist
+pkgver=20090914
+pkgrel=1
+pkgdesc="Arch Linux mirror list for use by pacman"
+arch=('i586')
+url="http://www.archlinux.org/pacman/"
+license=('GPL')
+groups=('base')
+backup=(etc/pacman.d/mirrorlist)
+source=(http://chaox.net/~jens/arch-i586/mirrorlist)
+
+build() {
+  mkdir -p $pkgdir/etc/pacman.d
+  install -m644 $srcdir/mirrorlist $pkgdir/etc/pacman.d/
+}
+
+md5sums=('0bff0d6f3fe5ea2eb4db398e0c3ae217')

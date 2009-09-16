@@ -1,0 +1,37 @@
+patching file src/getfd.c
+patching file src/psffontop.c
+patching file src/klibc_compat.c
+configure.ac:11: installing `./config.guess'
+configure.ac:11: installing `./config.sub'
+configure.ac:6: installing `./install-sh'
+configure.ac:6: installing `./missing'
+man/man1/Makefile.am:4: `%'-style pattern rules are a GNU make extension
+man/man8/Makefile.am:4: `%'-style pattern rules are a GNU make extension
+src/Makefile.am:62: compiling `loadunimap.c' with per-target flags requires `AM_PROG_CC_C_O' in `configure.ac'
+src/Makefile.am: installing `./depcomp'
+configure.ac: installing `./ylwrap'
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking build system type... i586-pc-linux-gnu
+checking host system type... i586-pc-linux-gnu
+checking for klcc... klcc
+checking for bison... bison -y
+checking for gcc... klcc
+checking for C compiler default output file name... 
+configure: error: in `/home/build/abs/core/klibc-kbd/src':
+configure: error: C compiler cannot create executables
+See `config.log' for more details.
+cc -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer  -Wl,--as-needed  kbd_mode.c   -o kbd_mode
+In file included from kbd_mode.c:14:
+nls.h:2:23: error: ../config.h: No such file or directory
+In file included from kbd_mode.c:15:
+version.h: In function ‘print_version_and_exit’:
+version.h:16: error: expected ‘)’ before ‘VERSION’
+kbd_mode.c: In function ‘main’:
+kbd_mode.c:30: error: ‘LC_ALL’ undeclared (first use in this function)
+kbd_mode.c:30: error: (Each undeclared identifier is reported only once
+kbd_mode.c:30: error: for each function it appears in.)
+make: *** [kbd_mode] Error 1

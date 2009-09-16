@@ -1,0 +1,359 @@
+patching file extras/Makefile.in
+Hunk #1 succeeded at 192 with fuzz 1 (offset 16 lines).
+patching file extras/volume_id/lib/libvolume_id-private.h
+Hunk #1 succeeded at 39 (offset 4 lines).
+patching file extras/volume_id/lib/md5.c
+patching file udev/udev-util.c
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking for gcc... klcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether klcc accepts -g... yes
+checking for klcc option to accept ISO C89... none needed
+checking dependency style of klcc... gcc3
+checking how to run the C preprocessor... klcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... no
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... no
+checking for strings.h... no
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking build system type... i586-pc-linux-gnulibc1
+checking host system type... i586-pc-linux-gnulibc1
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by klcc... klcc
+checking if the linker (klcc) is GNU ld... no
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for klcc option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for ar... ar
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from klcc object... ok
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if klcc supports -fno-rtti -fno-exceptions... no
+checking for klcc option to produce PIC... -fPIC -DPIC
+checking if klcc PIC flag -fPIC -DPIC works... yes
+checking if klcc static flag -static works... yes
+checking if klcc supports -c -o file.o... yes
+checking if klcc supports -c -o file.o... (cached) yes
+checking whether the klcc linker (klcc) supports shared libraries... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... unsupported
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for xsltproc... /usr/bin/xsltproc
+checking for inotify_init in -lc... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating udev/Makefile
+config.status: creating udev/lib/Makefile
+config.status: creating udev/lib/libudev.pc
+config.status: creating rules/Makefile
+config.status: creating extras/Makefile
+config.status: creating extras/ata_id/Makefile
+config.status: creating extras/cdrom_id/Makefile
+config.status: creating extras/edd_id/Makefile
+config.status: creating extras/path_id/Makefile
+config.status: creating extras/firmware/Makefile
+config.status: creating extras/collect/Makefile
+config.status: creating extras/floppy/Makefile
+config.status: creating extras/fstab_import/Makefile
+config.status: creating extras/rule_generator/Makefile
+config.status: creating extras/scsi_id/Makefile
+config.status: creating extras/usb_id/Makefile
+config.status: creating extras/volume_id/Makefile
+config.status: creating extras/volume_id/lib/Makefile
+config.status: creating extras/volume_id/lib/libvolume_id.pc
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+	udev 141
+	========
+
+	prefix:			
+	exec_prefix:		${prefix}
+	udev_prefix:		${exec_prefix}
+	libdir_name:		lib
+	datarootdir:		${prefix}/share
+	mandir:			${datarootdir}/man
+	includedir:		${prefix}/include
+
+	logging:		yes
+	debug:			no
+	selinux:		no
+
+	compiler:		klcc
+	cflags:			-march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer
+	ldflags:		
+
+	xsltproc:		/usr/bin/xsltproc
+
+make  all-recursive
+make[1]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141'
+Making all in udev
+make[2]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/udev'
+Making all in lib
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/udev/lib'
+/bin/sh ../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev.lo -MD -MP -MF .deps/libudev.Tpo -c -o libudev.lo libudev.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../.. -include ../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev.lo -MD -MP -MF .deps/libudev.Tpo -c libudev.c -o libudev.o
+mv -f .deps/libudev.Tpo .deps/libudev.Plo
+/bin/sh ../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-list.lo -MD -MP -MF .deps/libudev-list.Tpo -c -o libudev-list.lo libudev-list.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../.. -include ../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-list.lo -MD -MP -MF .deps/libudev-list.Tpo -c libudev-list.c -o libudev-list.o
+mv -f .deps/libudev-list.Tpo .deps/libudev-list.Plo
+/bin/sh ../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-util.lo -MD -MP -MF .deps/libudev-util.Tpo -c -o libudev-util.lo libudev-util.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../.. -include ../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-util.lo -MD -MP -MF .deps/libudev-util.Tpo -c libudev-util.c -o libudev-util.o
+mv -f .deps/libudev-util.Tpo .deps/libudev-util.Plo
+/bin/sh ../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-device.lo -MD -MP -MF .deps/libudev-device.Tpo -c -o libudev-device.lo libudev-device.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../.. -include ../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-device.lo -MD -MP -MF .deps/libudev-device.Tpo -c libudev-device.c -o libudev-device.o
+mv -f .deps/libudev-device.Tpo .deps/libudev-device.Plo
+/bin/sh ../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-enumerate.lo -MD -MP -MF .deps/libudev-enumerate.Tpo -c -o libudev-enumerate.lo libudev-enumerate.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../.. -include ../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-enumerate.lo -MD -MP -MF .deps/libudev-enumerate.Tpo -c libudev-enumerate.c -o libudev-enumerate.o
+mv -f .deps/libudev-enumerate.Tpo .deps/libudev-enumerate.Plo
+/bin/sh ../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-monitor.lo -MD -MP -MF .deps/libudev-monitor.Tpo -c -o libudev-monitor.lo libudev-monitor.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../.. -include ../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-monitor.lo -MD -MP -MF .deps/libudev-monitor.Tpo -c libudev-monitor.c -o libudev-monitor.o
+mv -f .deps/libudev-monitor.Tpo .deps/libudev-monitor.Plo
+/bin/sh ../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-queue.lo -MD -MP -MF .deps/libudev-queue.Tpo -c -o libudev-queue.lo libudev-queue.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../.. -include ../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-queue.lo -MD -MP -MF .deps/libudev-queue.Tpo -c libudev-queue.c -o libudev-queue.o
+mv -f .deps/libudev-queue.Tpo .deps/libudev-queue.Plo
+/bin/sh ../../libtool --tag=CC   --mode=link klcc  -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -version-info 2:0:2 -export-symbols ../../udev/lib/exported_symbols  -o libudev.la -rpath /lib libudev.lo libudev-list.lo libudev-util.lo libudev-device.lo libudev-enumerate.lo libudev-monitor.lo libudev-queue.lo  
+libtool: link: ar cru .libs/libudev.a  libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-enumerate.o libudev-monitor.o libudev-queue.o
+libtool: link: ranlib .libs/libudev.a
+libtool: link: ( cd ".libs" && rm -f "libudev.la" && ln -s "../libudev.la" "libudev.la" )
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT test-libudev.o -MD -MP -MF .deps/test-libudev.Tpo -c -o test-libudev.o test-libudev.c
+mv -f .deps/test-libudev.Tpo .deps/test-libudev.Po
+/bin/sh ../../libtool --tag=CC   --mode=link klcc  -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed  -o test-libudev test-libudev.o libudev.la 
+libtool: link: klcc -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed -o test-libudev test-libudev.o  ./.libs/libudev.a
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/udev/lib'
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/udev'
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udev-event.o -MD -MP -MF .deps/udev-event.Tpo -c -o udev-event.o udev-event.c
+mv -f .deps/udev-event.Tpo .deps/udev-event.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udev-watch.o -MD -MP -MF .deps/udev-watch.Tpo -c -o udev-watch.o udev-watch.c
+mv -f .deps/udev-watch.Tpo .deps/udev-watch.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udev-node.o -MD -MP -MF .deps/udev-node.Tpo -c -o udev-node.o udev-node.c
+mv -f .deps/udev-node.Tpo .deps/udev-node.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udev-rules.o -MD -MP -MF .deps/udev-rules.Tpo -c -o udev-rules.o udev-rules.c
+mv -f .deps/udev-rules.Tpo .deps/udev-rules.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udev-util.o -MD -MP -MF .deps/udev-util.Tpo -c -o udev-util.o udev-util.c
+mv -f .deps/udev-util.Tpo .deps/udev-util.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev.o -MD -MP -MF .deps/libudev.Tpo -c -o libudev.o `test -f 'lib/libudev.c' || echo './'`lib/libudev.c
+mv -f .deps/libudev.Tpo .deps/libudev.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-list.o -MD -MP -MF .deps/libudev-list.Tpo -c -o libudev-list.o `test -f 'lib/libudev-list.c' || echo './'`lib/libudev-list.c
+mv -f .deps/libudev-list.Tpo .deps/libudev-list.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-util.o -MD -MP -MF .deps/libudev-util.Tpo -c -o libudev-util.o `test -f 'lib/libudev-util.c' || echo './'`lib/libudev-util.c
+mv -f .deps/libudev-util.Tpo .deps/libudev-util.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-device.o -MD -MP -MF .deps/libudev-device.Tpo -c -o libudev-device.o `test -f 'lib/libudev-device.c' || echo './'`lib/libudev-device.c
+mv -f .deps/libudev-device.Tpo .deps/libudev-device.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-device-db-write.o -MD -MP -MF .deps/libudev-device-db-write.Tpo -c -o libudev-device-db-write.o `test -f 'lib/libudev-device-db-write.c' || echo './'`lib/libudev-device-db-write.c
+mv -f .deps/libudev-device-db-write.Tpo .deps/libudev-device-db-write.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-monitor.o -MD -MP -MF .deps/libudev-monitor.Tpo -c -o libudev-monitor.o `test -f 'lib/libudev-monitor.c' || echo './'`lib/libudev-monitor.c
+mv -f .deps/libudev-monitor.Tpo .deps/libudev-monitor.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-enumerate.o -MD -MP -MF .deps/libudev-enumerate.Tpo -c -o libudev-enumerate.o `test -f 'lib/libudev-enumerate.c' || echo './'`lib/libudev-enumerate.c
+mv -f .deps/libudev-enumerate.Tpo .deps/libudev-enumerate.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-queue.o -MD -MP -MF .deps/libudev-queue.Tpo -c -o libudev-queue.o `test -f 'lib/libudev-queue.c' || echo './'`lib/libudev-queue.c
+mv -f .deps/libudev-queue.Tpo .deps/libudev-queue.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-ctrl.o -MD -MP -MF .deps/libudev-ctrl.Tpo -c -o libudev-ctrl.o `test -f 'lib/libudev-ctrl.c' || echo './'`lib/libudev-ctrl.c
+mv -f .deps/libudev-ctrl.Tpo .deps/libudev-ctrl.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT test-udev.o -MD -MP -MF .deps/test-udev.Tpo -c -o test-udev.o test-udev.c
+mv -f .deps/test-udev.Tpo .deps/test-udev.Po
+/bin/sh ../libtool --tag=CC   --mode=link klcc  -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed  -o test-udev udev-event.o udev-watch.o udev-node.o udev-rules.o udev-util.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-device-db-write.o libudev-monitor.o libudev-enumerate.o libudev-queue.o libudev-ctrl.o  test-udev.o  
+libtool: link: klcc -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed -o test-udev udev-event.o udev-watch.o udev-node.o udev-rules.o udev-util.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-device-db-write.o libudev-monitor.o libudev-enumerate.o libudev-queue.o libudev-ctrl.o test-udev.o 
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udevd.o -MD -MP -MF .deps/udevd.Tpo -c -o udevd.o udevd.c
+mv -f .deps/udevd.Tpo .deps/udevd.Po
+/bin/sh ../libtool --tag=CC   --mode=link klcc  -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed  -o udevd udev-event.o udev-watch.o udev-node.o udev-rules.o udev-util.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-device-db-write.o libudev-monitor.o libudev-enumerate.o libudev-queue.o libudev-ctrl.o  udevd.o  
+libtool: link: klcc -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed -o udevd udev-event.o udev-watch.o udev-node.o udev-rules.o udev-util.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-device-db-write.o libudev-monitor.o libudev-enumerate.o libudev-queue.o libudev-ctrl.o udevd.o 
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udevadm.o -MD -MP -MF .deps/udevadm.Tpo -c -o udevadm.o udevadm.c
+mv -f .deps/udevadm.Tpo .deps/udevadm.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udevadm-info.o -MD -MP -MF .deps/udevadm-info.Tpo -c -o udevadm-info.o udevadm-info.c
+mv -f .deps/udevadm-info.Tpo .deps/udevadm-info.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udevadm-control.o -MD -MP -MF .deps/udevadm-control.Tpo -c -o udevadm-control.o udevadm-control.c
+mv -f .deps/udevadm-control.Tpo .deps/udevadm-control.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udevadm-test.o -MD -MP -MF .deps/udevadm-test.Tpo -c -o udevadm-test.o udevadm-test.c
+mv -f .deps/udevadm-test.Tpo .deps/udevadm-test.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udevadm-monitor.o -MD -MP -MF .deps/udevadm-monitor.Tpo -c -o udevadm-monitor.o udevadm-monitor.c
+mv -f .deps/udevadm-monitor.Tpo .deps/udevadm-monitor.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udevadm-settle.o -MD -MP -MF .deps/udevadm-settle.Tpo -c -o udevadm-settle.o udevadm-settle.c
+mv -f .deps/udevadm-settle.Tpo .deps/udevadm-settle.Po
+klcc -DHAVE_CONFIG_H -I. -I..  -include ../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udevadm-trigger.o -MD -MP -MF .deps/udevadm-trigger.Tpo -c -o udevadm-trigger.o udevadm-trigger.c
+mv -f .deps/udevadm-trigger.Tpo .deps/udevadm-trigger.Po
+/bin/sh ../libtool --tag=CC   --mode=link klcc  -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed  -o udevadm udev-event.o udev-watch.o udev-node.o udev-rules.o udev-util.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-device-db-write.o libudev-monitor.o libudev-enumerate.o libudev-queue.o libudev-ctrl.o  udevadm.o udevadm-info.o udevadm-control.o udevadm-test.o udevadm-monitor.o udevadm-settle.o udevadm-trigger.o  
+libtool: link: klcc -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed -o udevadm udev-event.o udev-watch.o udev-node.o udev-rules.o udev-util.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-device-db-write.o libudev-monitor.o libudev-enumerate.o libudev-queue.o libudev-ctrl.o udevadm.o udevadm-info.o udevadm-control.o udevadm-test.o udevadm-monitor.o udevadm-settle.o udevadm-trigger.o 
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/udev'
+make[2]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/udev'
+Making all in rules
+make[2]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/rules'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/rules'
+Making all in extras
+make[2]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras'
+Making all in ata_id
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/ata_id'
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT ata_id.o -MD -MP -MF .deps/ata_id.Tpo -c -o ata_id.o ata_id.c
+mv -f .deps/ata_id.Tpo .deps/ata_id.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev.o -MD -MP -MF .deps/libudev.Tpo -c -o libudev.o `test -f '../../udev/lib/libudev.c' || echo './'`../../udev/lib/libudev.c
+mv -f .deps/libudev.Tpo .deps/libudev.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-list.o -MD -MP -MF .deps/libudev-list.Tpo -c -o libudev-list.o `test -f '../../udev/lib/libudev-list.c' || echo './'`../../udev/lib/libudev-list.c
+mv -f .deps/libudev-list.Tpo .deps/libudev-list.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-util.o -MD -MP -MF .deps/libudev-util.Tpo -c -o libudev-util.o `test -f '../../udev/lib/libudev-util.c' || echo './'`../../udev/lib/libudev-util.c
+mv -f .deps/libudev-util.Tpo .deps/libudev-util.Po
+/bin/sh ../../libtool --tag=CC   --mode=link klcc  -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed  -o ata_id ata_id.o libudev.o libudev-list.o libudev-util.o  
+libtool: link: klcc -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed -o ata_id ata_id.o libudev.o libudev-list.o libudev-util.o 
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/ata_id'
+Making all in edd_id
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/edd_id'
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT edd_id.o -MD -MP -MF .deps/edd_id.Tpo -c -o edd_id.o edd_id.c
+mv -f .deps/edd_id.Tpo .deps/edd_id.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev.o -MD -MP -MF .deps/libudev.Tpo -c -o libudev.o `test -f '../../udev/lib/libudev.c' || echo './'`../../udev/lib/libudev.c
+mv -f .deps/libudev.Tpo .deps/libudev.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-list.o -MD -MP -MF .deps/libudev-list.Tpo -c -o libudev-list.o `test -f '../../udev/lib/libudev-list.c' || echo './'`../../udev/lib/libudev-list.c
+mv -f .deps/libudev-list.Tpo .deps/libudev-list.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-util.o -MD -MP -MF .deps/libudev-util.Tpo -c -o libudev-util.o `test -f '../../udev/lib/libudev-util.c' || echo './'`../../udev/lib/libudev-util.c
+mv -f .deps/libudev-util.Tpo .deps/libudev-util.Po
+/bin/sh ../../libtool --tag=CC   --mode=link klcc  -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed  -o edd_id edd_id.o libudev.o libudev-list.o libudev-util.o  
+libtool: link: klcc -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed -o edd_id edd_id.o libudev.o libudev-list.o libudev-util.o 
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/edd_id'
+Making all in path_id
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/path_id'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/path_id'
+Making all in firmware
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/firmware'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/firmware'
+Making all in floppy
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/floppy'
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT create_floppy_devices.o -MD -MP -MF .deps/create_floppy_devices.Tpo -c -o create_floppy_devices.o create_floppy_devices.c
+mv -f .deps/create_floppy_devices.Tpo .deps/create_floppy_devices.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev.o -MD -MP -MF .deps/libudev.Tpo -c -o libudev.o `test -f '../../udev/lib/libudev.c' || echo './'`../../udev/lib/libudev.c
+mv -f .deps/libudev.Tpo .deps/libudev.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-list.o -MD -MP -MF .deps/libudev-list.Tpo -c -o libudev-list.o `test -f '../../udev/lib/libudev-list.c' || echo './'`../../udev/lib/libudev-list.c
+mv -f .deps/libudev-list.Tpo .deps/libudev-list.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-util.o -MD -MP -MF .deps/libudev-util.Tpo -c -o libudev-util.o `test -f '../../udev/lib/libudev-util.c' || echo './'`../../udev/lib/libudev-util.c
+mv -f .deps/libudev-util.Tpo .deps/libudev-util.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-device.o -MD -MP -MF .deps/libudev-device.Tpo -c -o libudev-device.o `test -f '../../udev/lib/libudev-device.c' || echo './'`../../udev/lib/libudev-device.c
+mv -f .deps/libudev-device.Tpo .deps/libudev-device.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-enumerate.o -MD -MP -MF .deps/libudev-enumerate.Tpo -c -o libudev-enumerate.o `test -f '../../udev/lib/libudev-enumerate.c' || echo './'`../../udev/lib/libudev-enumerate.c
+mv -f .deps/libudev-enumerate.Tpo .deps/libudev-enumerate.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT udev-util.o -MD -MP -MF .deps/udev-util.Tpo -c -o udev-util.o `test -f '../../udev/udev-util.c' || echo './'`../../udev/udev-util.c
+mv -f .deps/udev-util.Tpo .deps/udev-util.Po
+/bin/sh ../../libtool --tag=CC   --mode=link klcc  -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed  -o create_floppy_devices create_floppy_devices.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-enumerate.o udev-util.o   
+libtool: link: klcc -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed -o create_floppy_devices create_floppy_devices.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-enumerate.o udev-util.o 
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/floppy'
+Making all in rule_generator
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/rule_generator'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/rule_generator'
+Making all in usb_id
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/usb_id'
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT usb_id.o -MD -MP -MF .deps/usb_id.Tpo -c -o usb_id.o usb_id.c
+mv -f .deps/usb_id.Tpo .deps/usb_id.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev.o -MD -MP -MF .deps/libudev.Tpo -c -o libudev.o `test -f '../../udev/lib/libudev.c' || echo './'`../../udev/lib/libudev.c
+mv -f .deps/libudev.Tpo .deps/libudev.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-list.o -MD -MP -MF .deps/libudev-list.Tpo -c -o libudev-list.o `test -f '../../udev/lib/libudev-list.c' || echo './'`../../udev/lib/libudev-list.c
+mv -f .deps/libudev-list.Tpo .deps/libudev-list.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-util.o -MD -MP -MF .deps/libudev-util.Tpo -c -o libudev-util.o `test -f '../../udev/lib/libudev-util.c' || echo './'`../../udev/lib/libudev-util.c
+mv -f .deps/libudev-util.Tpo .deps/libudev-util.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-device.o -MD -MP -MF .deps/libudev-device.Tpo -c -o libudev-device.o `test -f '../../udev/lib/libudev-device.c' || echo './'`../../udev/lib/libudev-device.c
+mv -f .deps/libudev-device.Tpo .deps/libudev-device.Po
+klcc -DHAVE_CONFIG_H -I. -I../..  -include ../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT libudev-enumerate.o -MD -MP -MF .deps/libudev-enumerate.Tpo -c -o libudev-enumerate.o `test -f '../../udev/lib/libudev-enumerate.c' || echo './'`../../udev/lib/libudev-enumerate.c
+mv -f .deps/libudev-enumerate.Tpo .deps/libudev-enumerate.Po
+/bin/sh ../../libtool --tag=CC   --mode=link klcc  -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed  -o usb_id usb_id.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-enumerate.o  
+libtool: link: klcc -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -Wl,--as-needed -o usb_id usb_id.o libudev.o libudev-list.o libudev-util.o libudev-device.o libudev-enumerate.o 
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/usb_id'
+Making all in volume_id
+make[3]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/volume_id'
+Making all in lib
+make[4]: Entering directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/volume_id/lib'
+/bin/sh ../../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../../..  -include ../../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT volume_id.lo -MD -MP -MF .deps/volume_id.Tpo -c -o volume_id.lo volume_id.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../../.. -include ../../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT volume_id.lo -MD -MP -MF .deps/volume_id.Tpo -c volume_id.c -o volume_id.o
+mv -f .deps/volume_id.Tpo .deps/volume_id.Plo
+/bin/sh ../../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../../..  -include ../../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT util.lo -MD -MP -MF .deps/util.Tpo -c -o util.lo util.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../../.. -include ../../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT util.lo -MD -MP -MF .deps/util.Tpo -c util.c -o util.o
+mv -f .deps/util.Tpo .deps/util.Plo
+/bin/sh ../../../libtool --tag=CC   --mode=compile klcc -DHAVE_CONFIG_H -I. -I../../..  -include ../../../config.h -DSYSCONFDIR=\""/etc"\" -DUDEV_PREFIX=\"""\" -D_LIBUDEV_COMPILATION   -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT md5.lo -MD -MP -MF .deps/md5.Tpo -c -o md5.lo md5.c
+libtool: compile:  klcc -DHAVE_CONFIG_H -I. -I../../.. -include ../../../config.h -DSYSCONFDIR=\"/etc\" -DUDEV_PREFIX=\"\" -D_LIBUDEV_COMPILATION -march=i586 -mtune=generic -Os -pipe -fomit-frame-pointer -MT md5.lo -MD -MP -MF .deps/md5.Tpo -c md5.c -o md5.o
+In file included from md5.c:29:
+md5.h:23: error: expected specifier-qualifier-list before ‘uint32_t’
+md5.h:29: error: expected ‘;’, ‘,’ or ‘)’ before ‘*’ token
+md5.h:30: error: expected declaration specifiers or ‘...’ before ‘uint8_t’
+md5.c:43: error: expected ‘)’ before ‘*’ token
+md5.c:126: error: expected ‘)’ before ‘*’ token
+md5.c:134: error: expected ‘)’ before ‘*’ token
+md5.c:140: error: expected ‘)’ before ‘*’ token
+md5.c: In function ‘md5_transform_helper’:
+md5.c:149: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c:149: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c:149: error: ‘uint32_t’ undeclared (first use in this function)
+md5.c:149: error: (Each undeclared identifier is reported only once
+md5.c:149: error: for each function it appears in.)
+md5.c:150: error: ‘struct md5_ctx’ has no member named ‘hash’
+md5.c:150: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c: In function ‘md5_init’:
+md5.c:155: error: ‘struct md5_ctx’ has no member named ‘hash’
+md5.c:156: error: ‘struct md5_ctx’ has no member named ‘hash’
+md5.c:157: error: ‘struct md5_ctx’ has no member named ‘hash’
+md5.c:158: error: ‘struct md5_ctx’ has no member named ‘hash’
+md5.c:159: error: ‘struct md5_ctx’ has no member named ‘byte_count’
+md5.c: At top level:
+md5.c:162: error: expected ‘;’, ‘,’ or ‘)’ before ‘*’ token
+md5.c:190: error: expected declaration specifiers or ‘...’ before ‘uint8_t’
+md5.c: In function ‘md5_final’:
+md5.c:192: error: ‘struct md5_ctx’ has no member named ‘byte_count’
+md5.c:193: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c:198: error: ‘uint64_t’ undeclared (first use in this function)
+md5.c:200: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c:205: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c:205: error: ‘struct md5_ctx’ has no member named ‘byte_count’
+md5.c:206: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c:206: error: ‘struct md5_ctx’ has no member named ‘byte_count’
+md5.c:207: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c:207: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c:208: error: ‘uint32_t’ undeclared (first use in this function)
+md5.c:209: error: ‘struct md5_ctx’ has no member named ‘hash’
+md5.c:209: error: ‘struct md5_ctx’ has no member named ‘block’
+md5.c:210: error: ‘struct md5_ctx’ has no member named ‘hash’
+md5.c:210: error: ‘struct md5_ctx’ has no member named ‘hash’
+md5.c:211: error: ‘out’ undeclared (first use in this function)
+md5.c:211: error: ‘struct md5_ctx’ has no member named ‘hash’
+md5.c:211: error: ‘struct md5_ctx’ has no member named ‘hash’
+make[4]: *** [md5.lo] Error 1
+make[4]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/volume_id/lib'
+make[3]: *** [all-recursive] Error 1
+make[3]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras/volume_id'
+make[2]: *** [all-recursive] Error 1
+make[2]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141/extras'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/build/abs/core/klibc-udev/src/udev-141'
+make: *** [all] Error 2

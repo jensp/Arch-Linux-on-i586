@@ -1,0 +1,24 @@
+#$Id: PKGBUILD 29964 2009-03-15 02:32:04Z hugo $
+# Maintainer: Hugo Doria <hugo@archlinux.org>
+
+pkgname=libcap
+pkgver=2.16
+pkgrel=4
+pkgdesc="POSIX 1003.1e capabilities"
+arch=('i586' 'i686' 'x86_64')
+url="http://www.kernel.org/pub/linux/libs/security/linux-privs/"
+license=('GPL')
+depends=('glibc')
+source=(http://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/${pkgname}-${pkgver}.tar.gz
+	libcap-2.6.29-compat.patch)
+md5sums=('9e075fda242c4070ba76407064c13302'
+         '7327a51597db092d7549310b670b5366')
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  patch -Np0 -i "$srcdir"/libcap-2.6.29-compat.patch || return 1
+  sed -i -e "s|LIBDIR=\$(FAKEROOT)\$(lib_prefix)/\$(lib)|LIBDIR=\$(FAKEROOT)/\$(lib)|g" Make.Rules || return 1
+  make prefix=/usr DESTDIR=${pkgdir} install || return 1
+
+  rm ${pkgdir}/lib/*.a || return 1
+  chmod 755 ${pkgdir}/lib/libcap.so.* || return 1
+}
