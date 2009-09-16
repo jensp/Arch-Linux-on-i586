@@ -1,6 +1,5 @@
-# $Id: PKGBUILD 5374 2008-07-15 17:18:23Z daniel $
 # Contributor: orelien <aurelien.foret@wanadoo.fr>
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=rp-pppoe
 pkgver=3.10
 pkgrel=1

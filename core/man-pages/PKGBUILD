@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 47777 2009-07-26 19:37:17Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=man-pages
 pkgver=3.22

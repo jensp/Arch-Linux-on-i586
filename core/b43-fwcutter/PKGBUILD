@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 356 2008-04-18 22:56:27Z aaron $
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgname=b43-fwcutter
 pkgver=012

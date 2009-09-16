@@ -1,5 +1,5 @@
 #$Id: PKGBUILD 48175 2009-07-31 21:11:57Z tpowa $
-#Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+#Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=ndiswrapper-utils
 pkgver=1.55

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 39416 2009-05-16 12:09:55Z thomas $
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgname=iwlwifi-3945-ucode
 pkgver=15.32.2.9

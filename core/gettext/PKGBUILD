@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 30624 2009-03-21 03:28:13Z allan $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=gettext
 pkgver=0.17
 pkgrel=3

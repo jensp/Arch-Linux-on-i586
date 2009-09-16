@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 38820 2009-05-10 15:52:26Z jgc $
-# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Link Dupont <link@subpop.net>
 #
 pkgname=dbus-core

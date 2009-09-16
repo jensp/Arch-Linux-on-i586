@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 22224 2008-12-23 08:31:23Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=diffutils
 pkgver=2.8.1

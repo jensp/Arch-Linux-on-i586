@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 48491 2009-08-02 14:54:21Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=wget

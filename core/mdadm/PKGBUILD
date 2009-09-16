@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 32320 2009-03-30 06:53:59Z tpowa $
-# Maintainer: Judd Vinet <jvinet@zeroflux.org>
+# Contributor: Judd Vinet <jvinet@zeroflux.org>
 pkgname=mdadm
 pkgver=2.6.9
 pkgrel=1

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 45350 2009-07-10 02:42:57Z eric $
-# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
 
 pkgname=lvm2
 pkgver=2.02.48

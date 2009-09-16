@@ -1,5 +1,4 @@
-# $Id$
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 # Contributor: Xavier Chantry <shiningxc@gmail.com>
 
 pkgname=libfetch

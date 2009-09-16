@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 45363 2009-07-10 04:39:51Z allan $
-# Maintainer: 
+# Contributor: 
 # Contributor: Judd <jvinet@zeroflux.org>
 
 pkgname=libevent

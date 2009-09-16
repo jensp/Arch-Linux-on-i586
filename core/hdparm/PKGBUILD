@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 49481 2009-08-09 09:39:56Z tpowa $
-# Maintainer: Paul Mattal <paul@archlinux.org>
+# Contributor: Paul Mattal <paul@archlinux.org>
 
 pkgname=hdparm
 pkgver=9.22

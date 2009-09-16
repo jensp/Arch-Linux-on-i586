@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 46453 2009-07-18 12:36:22Z allan $
-# Maintainer: Judd Vinet <jvinet@zeroflux.org>
+# Contributor: Judd Vinet <jvinet@zeroflux.org>
 # Contributor: Curtis Campbell <curtisjamescampbell@hotmail.com>
 pkgname=usbutils
 pkgver=0.84

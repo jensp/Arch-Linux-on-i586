@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 13520 2008-09-27 14:40:44Z tpowa $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Surain Mallawa Arachchi <mas@crc32.net>
 
 pkgname=linux-atm

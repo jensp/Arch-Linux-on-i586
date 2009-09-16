@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 40122 2009-05-28 12:37:46Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=db

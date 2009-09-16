@@ -1,6 +1,5 @@
-# $Id: PKGBUILD 39455 2009-05-17 03:51:56Z allan $
-# Maintainer: Jan de Groot <jgc@archlinux.org>
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
 pkgname=gmp
 pkgver=4.3.1
 pkgrel=2

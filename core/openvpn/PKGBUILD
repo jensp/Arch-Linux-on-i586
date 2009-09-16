@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 47697 2009-07-25 11:51:05Z thomas $
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgname=openvpn
 pkgver=2.1_rc19

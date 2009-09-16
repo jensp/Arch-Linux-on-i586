@@ -1,6 +1,5 @@
-# $Id: PKGBUILD 50107 2009-08-22 14:20:12Z thomas $
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgname=initscripts
 pkgver=2009.08

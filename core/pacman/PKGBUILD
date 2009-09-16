@@ -1,6 +1,5 @@
-# $Id: PKGBUILD 49353 2009-08-06 11:22:10Z allan $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
-# Maintainer: Dan McGee <dan@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Dan McGee <dan@archlinux.org>
 
 pkgname=pacman
 pkgver=3.3.0

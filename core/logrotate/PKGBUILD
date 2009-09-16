@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 35410 2009-04-13 11:02:40Z allan $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=logrotate

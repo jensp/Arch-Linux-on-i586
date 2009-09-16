@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 42668 2009-06-18 15:45:42Z aaron $
-# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: Eric Belanger <eric@archlinux.org>
 
 pkgname=inetutils

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 31750 2009-03-28 08:53:41Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Judd <judd@archlinux.org>
 
 pkgname=nano

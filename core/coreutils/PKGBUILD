@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 50198 2009-08-24 14:07:02Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=coreutils

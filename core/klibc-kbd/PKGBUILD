@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 41787 2009-06-07 11:37:55Z thomas $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=klibc-kbd
 pkgver=1.15.20080312

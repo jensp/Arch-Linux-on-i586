@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 48339 2009-08-01 14:41:14Z jgc $
-# Maintainer: Paul Mattal <paul@archlinux.org>
+# Contributor: Paul Mattal <paul@archlinux.org>
 pkgname=xfsprogs
 pkgver=3.0.1
 pkgrel=2

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 21431 2008-12-13 09:15:06Z thomas $
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
 pkgname=vpnc
 pkgver=0.5.3
 pkgrel=1

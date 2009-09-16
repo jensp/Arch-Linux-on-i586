@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 48213 2009-08-01 04:43:01Z eric $
-# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
 
 pkgname=psmisc
 pkgver=22.8

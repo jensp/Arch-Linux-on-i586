@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 46385 2009-07-17 07:11:05Z francois $
-# Maintainer: kevin <kevin.archlinux.org>
+# Contributor: kevin <kevin.archlinux.org>
 # Contributor: judd <jvinet.zeroflux.org>
 # Contributor: francois <francois.archlinux.org> 
 pkgname=perl

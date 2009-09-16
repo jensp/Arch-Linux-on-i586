@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 42878 2009-06-18 21:34:32Z pierre $
-# Maintainer: Pierre Schmitz <pierre@archlinux.de>
+# Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=run-parts
 pkgver=3.1.3

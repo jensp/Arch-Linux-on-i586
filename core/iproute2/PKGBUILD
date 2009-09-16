@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 49869 2009-08-16 19:25:18Z ronald $
-# Maintainer: Ronald van Haren <ronald.archlinux.org>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=iproute2

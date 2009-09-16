@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 40703 2009-05-30 15:07:32Z tpowa $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=lilo

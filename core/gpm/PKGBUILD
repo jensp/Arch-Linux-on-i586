@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 26633 2009-02-10 02:55:02Z eric $
-# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=gpm

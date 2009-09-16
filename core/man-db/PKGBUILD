@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 43277 2009-06-21 09:47:00Z thomas $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Sergej Pupykin <sergej@aur.archlinux.org>
 
 pkgname=man-db

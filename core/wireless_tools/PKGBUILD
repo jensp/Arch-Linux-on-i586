@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 38713 2009-05-10 07:32:43Z tpowa $
-# Maintainer: Judd Vinet <jvinet@zeroflux.org>
+# Contributor: Judd Vinet <jvinet@zeroflux.org>
 # Contributer: Jason Chu <jchu@xentac.net>
 pkgname=wireless_tools
 pkgver=29

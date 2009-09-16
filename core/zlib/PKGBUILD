@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 22840 2008-12-28 20:42:25Z pierre $
-# Maintainer: Pierre Schmitz <pierre@archlinux.de>
+# Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=zlib
 pkgver=1.2.3.3

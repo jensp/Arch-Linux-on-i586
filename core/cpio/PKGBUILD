@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 48163 2009-07-31 20:55:39Z tpowa $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=cpio
 pkgver=2.10
 pkgrel=1

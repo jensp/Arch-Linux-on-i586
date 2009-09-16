@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 31190 2009-03-25 02:19:41Z dan $
-# Maintainer: Dan McGee <dan@archlinux.org>
+# Contributor: Dan McGee <dan@archlinux.org>
 
 pkgname=dash
 pkgver=0.5.5.1

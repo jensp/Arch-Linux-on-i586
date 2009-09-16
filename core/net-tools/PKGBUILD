@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 38718 2009-05-10 07:37:29Z tpowa $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=net-tools
 pkgver=1.60
 pkgrel=14

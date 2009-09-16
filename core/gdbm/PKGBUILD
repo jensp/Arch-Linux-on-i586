@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 38726 2009-05-10 07:55:06Z tpowa $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=gdbm
 pkgver=1.8.3
 pkgrel=6

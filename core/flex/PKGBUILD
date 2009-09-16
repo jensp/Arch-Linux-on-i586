@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 41636 2009-06-06 06:14:45Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=flex

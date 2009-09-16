@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 45347 2009-07-10 02:41:06Z eric $
-# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
 
 pkgname=device-mapper
 pkgver=1.02.33

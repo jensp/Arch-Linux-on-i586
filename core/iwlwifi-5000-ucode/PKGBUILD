@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 4445 2008-07-07 12:03:31Z thomas $
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgname=iwlwifi-5000-ucode
 pkgver=8.24.2.12

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 40883 2009-05-31 17:12:07Z thomas $
-# Maintainer: Thomas Bächler <thomas@archlinux.org>
+# Contributor: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=crda
 pkgver=1.1.0

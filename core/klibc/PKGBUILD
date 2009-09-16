@@ -1,6 +1,5 @@
-# $Id: PKGBUILD 41787 2009-06-07 11:37:55Z thomas $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
 
 ###
 ### NOTE: Do not build this package with anything except gcc - using ccache

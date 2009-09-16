@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 14158 2008-10-04 12:20:01Z tpowa $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgname=iputils
 pkgver=20071127

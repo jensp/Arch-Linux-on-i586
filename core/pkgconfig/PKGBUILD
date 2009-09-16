@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 1407 2008-05-07 22:55:37Z andyrtr $
-# Maintainer: dorphell <dorphell@archlinux.org>
+# Contributor: dorphell <dorphell@archlinux.org>
 # Committer: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=pkgconfig

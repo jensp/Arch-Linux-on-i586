@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 42552 2009-06-15 19:41:20Z tpowa $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 pkgname=rpcbind
 pkgver=0.2.0
 pkgrel=1

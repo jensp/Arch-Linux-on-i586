@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 12836 2008-09-21 14:41:26Z dan $
-# Maintainer: Judd Vinet <jvinet@zeroflux.org>
+# Contributor: Judd Vinet <jvinet@zeroflux.org>
 pkgname=ifenslave
 pkgver=1.1.0
 pkgrel=4

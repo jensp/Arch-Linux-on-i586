@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 8698 2008-08-16 03:34:22Z eric $
-# Maintainer: arjan <arjan@archlinux.org>
+# Contributor: arjan <arjan@archlinux.org>
 pkgname=libusb
 pkgver=0.1.12
 pkgrel=3

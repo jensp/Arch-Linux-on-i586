@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 42270 2009-06-12 07:26:25Z tpowa $
-# Maintainer: James Rayner <iphitus@gmail.com>
+# Contributor: James Rayner <iphitus@gmail.com>
 
 pkgname=tiacx
 pkgver=20080210

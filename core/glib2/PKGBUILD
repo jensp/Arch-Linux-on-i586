@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 43662 2009-06-28 10:26:38Z jgc $
-# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=glib2
 pkgver=2.20.4

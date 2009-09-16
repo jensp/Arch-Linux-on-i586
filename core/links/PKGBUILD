@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 9076 2008-08-17 03:25:54Z allan $
-# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=links

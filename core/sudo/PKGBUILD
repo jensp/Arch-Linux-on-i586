@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 48241 2009-08-01 07:48:40Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=sudo

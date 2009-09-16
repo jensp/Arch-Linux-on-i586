@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 50069 2009-08-19 20:11:29Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=tzdata
 pkgver=2009l

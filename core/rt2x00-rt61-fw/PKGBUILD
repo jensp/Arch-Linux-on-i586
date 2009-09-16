@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 15101 2008-10-12 16:24:41Z tpowa $
-# Maintainer: Tom Killian <tom@archlinux.org>
+# Contributor: Tom Killian <tom@archlinux.org>
 
 pkgname=rt2x00-rt61-fw
 pkgver=1.2

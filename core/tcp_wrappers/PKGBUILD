@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 41334 2009-06-03 10:21:08Z tpowa $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=tcp_wrappers
 pkgver=7.6
 pkgrel=10

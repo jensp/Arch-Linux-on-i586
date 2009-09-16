@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 47665 2009-07-25 01:02:38Z thomas $
-# Maintainer: Judd Vinet <jvinet@zeroflux.org>
+# Contributor: Judd Vinet <jvinet@zeroflux.org>
 pkgname=cryptsetup
 pkgver=1.0.7
 pkgrel=1

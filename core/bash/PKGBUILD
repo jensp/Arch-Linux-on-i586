@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 48292 2009-08-01 11:25:21Z allan $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgname=bash
 _patchlevel=028 #prepare for some patches

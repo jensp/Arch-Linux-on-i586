@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 13101 2008-09-25 22:20:33Z ronald $
-# Maintainer: 
+# Contributor: 
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 pkgname=libldap
 pkgver=2.4.16

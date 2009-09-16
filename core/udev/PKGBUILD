@@ -1,7 +1,6 @@
-# $Id: PKGBUILD 48501 2009-08-02 16:29:45Z tpowa $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
-# Maintainer: Thomas Bächler <thomas@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Thomas Bächler <thomas@archlinux.org>
 pkgname=udev
 pkgver=145
 pkgrel=1

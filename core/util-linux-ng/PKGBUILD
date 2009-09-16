@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 48301 2009-08-01 13:05:55Z jgc $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=util-linux-ng
 pkgver=2.16
 _loop_date=20090725

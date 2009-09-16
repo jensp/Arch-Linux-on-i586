@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 29306 2009-03-07 20:47:40Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=tar
 pkgver=1.22

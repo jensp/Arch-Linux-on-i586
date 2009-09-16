@@ -1,6 +1,5 @@
-# $Id: PKGBUILD 50484 2009-08-27 22:33:42Z thomas $
-# Maintainer: Dan McGee <dan@archlinux.org>
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Dan McGee <dan@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 pkgname=libarchive
 pkgver=2.7.1
 pkgrel=1

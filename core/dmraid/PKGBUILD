@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 46313 2009-07-15 13:47:44Z tpowa $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 #Contributor: Urs Wolfer <uwolfer @ fwo.ch>
 
 pkgname=dmraid

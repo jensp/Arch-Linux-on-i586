@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 33857 2009-04-05 03:12:45Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=m4

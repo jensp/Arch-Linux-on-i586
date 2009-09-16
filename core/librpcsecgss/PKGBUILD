@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 42557 2009-06-15 19:48:12Z tpowa $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Andrew Krawchyk <krawch_a@denison.edu>, Marco Lima <cipparello gmail com>
 
 pkgname=librpcsecgss

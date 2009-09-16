@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 20939 2008-12-08 02:49:06Z tobias $
-# Maintainer: tobias [ tobias at archlinux org ]
+# Contributor: tobias [ tobias at archlinux org ]
 
 pkgname=vi
 _srcver=7.2

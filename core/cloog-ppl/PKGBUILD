@@ -1,5 +1,4 @@
-# $Id: $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: ezzetabi <ezzetabi at gawab dot com>
 
 pkgname=cloog-ppl

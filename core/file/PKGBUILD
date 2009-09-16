@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 38767 2009-05-10 09:55:21Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=file

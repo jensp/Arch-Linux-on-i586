@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 21374 2008-12-12 10:34:44Z eric $
-# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
 
 pkgname=bison
 pkgver=2.4.1

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 30614 2009-03-21 02:13:23Z allan $
-# Maintainer: Judd <jvinet@zeroflux.org>
+# Contributor: Judd <jvinet@zeroflux.org>
 
 pkgname=bzip2
 pkgver=1.0.5

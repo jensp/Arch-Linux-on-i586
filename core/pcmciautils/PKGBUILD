@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 12902 2008-09-24 14:14:21Z tpowa $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 pkgname=pcmciautils
 pkgver=015
 pkgrel=2

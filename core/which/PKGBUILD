@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 12859 2008-09-22 17:33:50Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=which
 pkgver=2.20

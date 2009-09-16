@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 45053 2009-07-06 19:53:22Z andyrtr $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 
 # toolchain build order: kernel-headers->glibc->binutils->gcc-libs->gcc->binutils->glibc
 

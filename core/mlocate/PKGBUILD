@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 48252 2009-08-01 09:39:57Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: lydgate
 
 pkgname=mlocate

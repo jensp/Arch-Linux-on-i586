@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 26033 2009-02-02 12:20:10Z giovanni $
-# Maintainer: Roman Kyrylych <Roman.Kyrylych@gmail.com>
+# Contributor: Roman Kyrylych <Roman.Kyrylych@gmail.com>
 # Contributor: grimi@poczta.fm
 
 pkgname=sdparm

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 26319 2009-02-06 11:04:14Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=patch

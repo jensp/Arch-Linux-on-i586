@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 47786 2009-07-27 04:17:28Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=autoconf

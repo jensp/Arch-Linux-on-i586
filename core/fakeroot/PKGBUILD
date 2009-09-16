@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 50402 2009-08-26 07:32:13Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Jochem Kossen <j.kossen@home.nl>
 
 pkgname=fakeroot

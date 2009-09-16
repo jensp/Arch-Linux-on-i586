@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 41787 2009-06-07 11:37:55Z thomas $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 
 pkgname=klibc-extras
 pkgver=2.5

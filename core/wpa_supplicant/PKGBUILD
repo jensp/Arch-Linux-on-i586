@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 42883 2009-06-18 21:54:37Z thomas $
-# Maintainer: Thomas Baechler <thomas@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgname=wpa_supplicant
 pkgver=0.6.9

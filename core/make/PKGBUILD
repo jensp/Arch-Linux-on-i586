@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 30197 2009-03-17 11:43:22Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr at archlinux.org>
+# Contributor: Andreas Radke <andyrtr at archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=make

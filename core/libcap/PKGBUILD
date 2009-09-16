@@ -1,5 +1,5 @@
 #$Id: PKGBUILD 29964 2009-03-15 02:32:04Z hugo $
-# Maintainer: Hugo Doria <hugo@archlinux.org>
+# Contributor: Hugo Doria <hugo@archlinux.org>
 
 pkgname=libcap
 pkgver=2.16

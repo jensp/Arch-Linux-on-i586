@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 9042 2008-08-17 03:03:22Z allan $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=procinfo
 pkgver=19
 pkgrel=3

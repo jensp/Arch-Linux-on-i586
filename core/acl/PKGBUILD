@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 30575 2009-03-21 00:10:48Z allan $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 pkgname=acl
 pkgver=2.2.47
 pkgrel=2

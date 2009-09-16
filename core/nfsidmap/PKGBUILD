@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 13097 2008-09-25 22:11:54Z ronald $
-# Maintainer: 
+# Contributor: 
 # Contributor: Judd <jvinet@zeroflux.org>
 
 pkgname=nfsidmap

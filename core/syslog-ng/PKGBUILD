@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 50408 2009-08-26 07:45:25Z allan $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=syslog-ng

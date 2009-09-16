@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 39021 2009-05-11 07:16:44Z tpowa $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=dcron
 pkgver=3.2
 pkgrel=4

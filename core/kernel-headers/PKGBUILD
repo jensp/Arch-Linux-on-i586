@@ -1,6 +1,5 @@
-# $Id: PKGBUILD 50138 2009-08-23 14:49:50Z jgc $
-# Maintainer: Jan de Groot <jgc@archlinux.org>
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 
 # toolchain build order: kernel-headers->glibc->binutils->gcc-libs->gcc->binutils->glibc
 

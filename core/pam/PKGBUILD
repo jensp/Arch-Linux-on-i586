@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 29514 2009-03-09 17:33:55Z tpowa $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=pam
 pkgver=1.0.4
 pkgrel=1

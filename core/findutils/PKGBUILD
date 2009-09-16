@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 42593 2009-06-16 13:49:59Z tpowa $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=findutils
 pkgver=4.4.2
 pkgrel=1

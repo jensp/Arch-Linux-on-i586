@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 47762 2009-07-26 18:57:16Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=ed
 pkgver=1.4

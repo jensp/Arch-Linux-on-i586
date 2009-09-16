@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 23147 2009-01-04 01:41:50Z eric $
-# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=eventlog

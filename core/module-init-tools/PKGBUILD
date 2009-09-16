@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 50410 2009-08-26 08:03:18Z allan $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=module-init-tools

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 39920 2009-05-23 05:07:58Z allan $
-# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=automake

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 35402 2009-04-13 10:38:22Z allan $
-# Maintainer: Aaron Griffin <aaron@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=openssh

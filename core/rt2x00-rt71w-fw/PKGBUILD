@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 15104 2008-10-12 16:35:52Z tpowa $
-# Maintainer: Tom Killian <tom@archlinux.org>
+# Contributor: Tom Killian <tom@archlinux.org>
 
 pkgname=rt2x00-rt71w-fw
 pkgver=1.8

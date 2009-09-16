@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 49883 2009-08-16 19:56:39Z andyrtr $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=sqlite3

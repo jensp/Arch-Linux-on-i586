@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 37188 2009-05-01 02:26:00Z eric $
-# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=sysvinit

@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 41490 2009-06-04 15:31:37Z tpowa $
-# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=libsasl
 pkgver=2.1.23

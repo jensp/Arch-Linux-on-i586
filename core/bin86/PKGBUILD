@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 38691 2009-05-10 06:48:07Z tpowa $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=bin86
 pkgver=0.16.17
 pkgrel=4

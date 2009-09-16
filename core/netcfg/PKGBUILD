@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 43652 2009-06-27 02:16:47Z james $
-# Maintainer: James Rayner <james@archlinux.org>
+# Contributor: James Rayner <james@archlinux.org>
 pkgname=netcfg
 pkgver=2.2.1
 pkgrel=1

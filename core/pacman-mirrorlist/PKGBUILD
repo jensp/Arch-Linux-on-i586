@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 42609 2009-06-17 01:51:42Z dan $
-# Maintainer: Dan McGee <dan@archlinux.org>
+# Contributor: Dan McGee <dan@archlinux.org>
 
 pkgname=pacman-mirrorlist
 pkgver=20090914

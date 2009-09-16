@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 45448 2009-07-11 18:23:55Z pierre $
-# Maintainer: Pierre Schmitz <pierre@archlinux.de>
+# Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=ca-certificates
 pkgver=20090814

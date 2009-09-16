@@ -1,5 +1,4 @@
-# $Id: PKGBUILD 7972 2008-08-05 11:03:19Z tpowa $
-# Maintainer: Tom Killian <tom@archlinux.org>
+# Contributor: Tom Killian <tom@archlinux.org>
 
 pkgname=wlan-ng26-utils
 pkgver=0.2.9
