@@ -1,8 +1,9 @@
-# Contributor: 
+# $Id: PKGBUILD 13101 2008-09-25 22:20:33Z ronald $
+# Maintainer: 
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 pkgname=libldap
-pkgver=2.4.16
-pkgrel=2
+pkgver=2.4.17
+pkgrel=1
 pkgdesc="LDAP client libraries"
 arch=(i586 i686 x86_64)
 license=('custom')
@@ -14,7 +15,7 @@ makedepends=('tcp_wrappers')
 source=(ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-${pkgver}.tgz
 	'ntlm.patch'
 	'getpeereid.patch')
-md5sums=('ed5b86e9d2b372d10edfe3bb59fee165'
+md5sums=('5e82103780f8cfc2b2fbd0f77c47c158'
          'ca3476e8c940ca5ed89e0fcc17ac6582'
          'c2b4328654f109adf6ad424d60d232c2')
 
