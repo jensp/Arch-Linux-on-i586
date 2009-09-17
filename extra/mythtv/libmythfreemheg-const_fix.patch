@@ -1,0 +1,18 @@
+--- mythtv-0.21/libs/libmythfreemheg/Text.cpp.old	2009-09-17 12:12:26.098202724 +0200
++++ mythtv-0.21/libs/libmythfreemheg/Text.cpp	2009-09-17 12:18:00.817478638 +0200
+@@ -243,7 +243,14 @@
+     else { // Textual form.
+         const unsigned char *str = attrs.Bytes();
+         const char *p = (const char *)str;
+-        char *q = strchr(p, '.'); // Find the terminating dot
++
++	/* Because the prototype of strchr() has changed in C++ from original C's char* strchr(const char*, int)
++	to two overloaded functions : const char* strchr(const char*, int) and char* strchr(char*, int), making
++	the 'q' a char* results in a build failure. We can safely add 'const' here, since the memory to which
++	it points is not changed anywhere in this function, just the pointer itself. This has probably been
++	already fixed upstream. - XAVeRY */
++
++        const char *q = strchr(p, '.'); // Find the terminating dot
+         if (q != NULL) { // plain, italic etc.
+             if (q-p == 6 && strncmp(p, "italic", 6) == 0) style = 1;
+             else if (q-p == 4 && strncmp(p, "bold", 4) == 0) style = 2;
