@@ -6,7 +6,7 @@ pkgname=icecast
 pkgver=2.3.2
 pkgrel=1
 pkgdesc="Streaming OGG and MP3 server. Replacement for shoutcase."
-arch=(i686 x86_64)
+arch=(i586 i686 x86_64)
 license=('GPL')
 url="http://www.icecast.org/"
 depends=('libxslt' 'libvorbis' 'curl>=7.19.2' 'speex' 'libtheora')
