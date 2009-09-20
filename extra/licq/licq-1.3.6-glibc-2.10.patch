@@ -1,0 +1,167 @@
+diff -ur licq-1.3.6.orig/plugins/msn/src/msn-sb.cpp licq-1.3.6/plugins/msn/src/msn-sb.cpp
+--- licq-1.3.6.orig/plugins/msn/src/msn-sb.cpp	2008-08-17 16:34:41.000000000 +0300
++++ licq-1.3.6/plugins/msn/src/msn-sb.cpp	2009-08-07 14:40:22.000000000 +0300
+@@ -441,7 +441,7 @@
+   const char *szParam = strServer.c_str();
+   char szServer[16];
+   char *szPort;
+-  if ((szPort = strchr(szParam, ':')))
++  if ((szPort = const_cast<char*> (strchr(szParam, ':'))))
+   {
+     strncpy(szServer, szParam, szPort - szParam);
+     szServer[szPort - szParam] = '\0';
+@@ -504,7 +504,7 @@
+   const char *szParam = strServer.c_str();
+   char szServer[16];
+   char *szPort;
+-  if ((szPort = strchr(szParam, ':')))
++  if ((szPort = const_cast<char*> (strchr(szParam, ':'))))
+   {
+     strncpy(szServer, szParam, szPort - szParam);
+     szServer[szPort - szParam] = '\0';
+diff -ur licq-1.3.6.orig/plugins/msn/src/msn-srv.cpp licq-1.3.6/plugins/msn/src/msn-srv.cpp
+--- licq-1.3.6.orig/plugins/msn/src/msn-srv.cpp	2008-08-11 19:06:38.000000000 +0300
++++ licq-1.3.6/plugins/msn/src/msn-srv.cpp	2009-08-07 14:41:08.000000000 +0300
+@@ -76,7 +76,7 @@
+         const char *szParam = strServer.c_str();
+         char szNewServer[16];
+         char *szPort;
+-        if ((szPort = strchr(szParam, ':')))
++        if ((szPort = const_cast<char*> (strchr(szParam, ':'))))
+         {
+           strncpy(szNewServer, szParam, szPort - szParam);
+           szNewServer[szPort - szParam] = '\0';
+diff -ur licq-1.3.6.orig/plugins/msn/src/msn-ssl.cpp licq-1.3.6/plugins/msn/src/msn-ssl.cpp
+--- licq-1.3.6.orig/plugins/msn/src/msn-ssl.cpp	2008-09-07 17:03:53.000000000 +0300
++++ licq-1.3.6/plugins/msn/src/msn-ssl.cpp	2009-08-07 14:41:37.000000000 +0300
+@@ -68,7 +68,7 @@
+   if (strFirstLine == "HTTP/1.1 200 OK")
+   {
+     m_pSSLPacket->ParseHeaders();
+-    char *fromPP = strstr(m_pSSLPacket->GetValue("Authentication-Info").c_str(), "from-PP=");
++    const char *fromPP = strstr(m_pSSLPacket->GetValue("Authentication-Info").c_str(), "from-PP=");
+     char *tag;
+ 
+     if (fromPP == 0)
+@@ -76,7 +76,7 @@
+     else
+     {
+       fromPP+= 9; // skip to the tag
+-      char *endTag = strchr(fromPP, '\'');
++      const char *endTag = strchr(fromPP, '\'');
+       tag = strndup(fromPP, endTag - fromPP); // Thanks, this is all we need
+     }
+ 
+@@ -146,7 +146,7 @@
+ 
+   m_pNexusBuff->ParseHeaders();
+   
+-  char *szLogin = strstr(m_pNexusBuff->GetValue("PassportURLs").c_str(), "DALogin=");
++  const char *szLogin = strstr(m_pNexusBuff->GetValue("PassportURLs").c_str(), "DALogin=");
+   szLogin += 8; // skip to the tag
+   //char *szEndURL = strchr(szLogin, '/');
+   //char *szServer = strndup(szLogin, szEndURL - szLogin); // this is all we need
+diff -ur licq-1.3.6.orig/src/file.cpp licq-1.3.6/src/file.cpp
+--- licq-1.3.6.orig/src/file.cpp	2008-09-13 16:58:45.000000000 +0300
++++ licq-1.3.6/src/file.cpp	2009-08-07 14:43:57.000000000 +0300
+@@ -569,7 +569,7 @@
+   }
+   else
+   {
+-    if ((szPostEquals = strchr(_szLine, '=')) == NULL)
++    if ((szPostEquals = const_cast<char*> (strchr(_szLine, '='))) == NULL)
+     {
+        Warn(INI_ExFORMAT, _szLine);
+        return NULL;
+diff -ur licq-1.3.6.orig/src/icqd-filetransfer.cpp licq-1.3.6/src/icqd-filetransfer.cpp
+--- licq-1.3.6.orig/src/icqd-filetransfer.cpp	2008-07-25 23:34:44.000000000 +0300
++++ licq-1.3.6/src/icqd-filetransfer.cpp	2009-08-07 14:45:06.000000000 +0300
+@@ -106,7 +106,7 @@
+   struct stat buf;
+ 
+   // Remove any path from the filename
+-  if ( (pcNoPath = strrchr(_szFileName, '/')) != NULL)
++  if ( (pcNoPath = const_cast<char*> (strrchr(_szFileName, '/'))) != NULL)
+     m_szFileName = strdup(pcNoPath + 1);
+   else
+     m_szFileName = strdup(_szFileName);
+diff -ur licq-1.3.6.orig/src/icqpacket.cpp licq-1.3.6/src/icqpacket.cpp
+--- licq-1.3.6.orig/src/icqpacket.cpp	2008-08-23 19:04:35.000000000 +0300
++++ licq-1.3.6/src/icqpacket.cpp	2009-08-07 14:29:38.000000000 +0300
+@@ -5874,7 +5874,7 @@
+   }
+ 
+   // Remove path from filename (if it exists)
+-  char *pcEndOfPath = strrchr(_szFilename, '/');
++  const char *pcEndOfPath = strrchr(_szFilename, '/');
+   if (pcEndOfPath != NULL)
+      m_szFilename = strdup(pcEndOfPath + 1);
+   else
+diff -ur licq-1.3.6.orig/src/licq.cpp licq-1.3.6/src/licq.cpp
+--- licq-1.3.6.orig/src/licq.cpp	2008-06-11 21:34:35.000000000 +0300
++++ licq-1.3.6/src/licq.cpp	2009-08-07 14:32:52.000000000 +0300
+@@ -183,14 +183,14 @@
+ /*-----Helper functions for CLicq::UpgradeLicq-----------------------------*/
+ int SelectUserUtility(const struct dirent *d)
+ {
+-  char *pcDot = strrchr(d->d_name, '.');
++  const char *pcDot = strrchr(d->d_name, '.');
+   if (pcDot == NULL) return (0);
+   return (strcmp(pcDot, ".uin") == 0);
+ }
+ 
+ int SelectHistoryUtility(const struct dirent *d)
+ {
+-  char *pcDot = strchr(d->d_name, '.');
++  const char *pcDot = strchr(d->d_name, '.');
+   if (pcDot == NULL) return (0);
+   return (strcmp(pcDot, ".history") == 0 ||
+           strcmp(pcDot, ".history.removed") == 0);
+diff -ur licq-1.3.6.orig/src/rtf.cc licq-1.3.6/src/rtf.cc
+--- licq-1.3.6.orig/src/rtf.cc	2007-06-21 00:41:54.000000000 +0300
++++ licq-1.3.6/src/rtf.cc	2009-08-07 14:38:41.000000000 +0300
+@@ -2141,7 +2141,7 @@
+         return;
+     }
+     if (m_bFontName){
+-        char *pp = strchr(str, ';');
++        const char *pp = strchr(str, ';');
+         unsigned size = strlen(pp);
+         if (pp){
+             size = (pp - str);
+diff -ur licq-1.3.6.orig/src/rtf.ll licq-1.3.6/src/rtf.ll
+--- licq-1.3.6.orig/src/rtf.ll	2007-06-21 00:41:54.000000000 +0300
++++ licq-1.3.6/src/rtf.ll	2009-08-07 14:38:27.000000000 +0300
+@@ -541,7 +541,7 @@
+         return;
+     }
+     if (m_bFontName){
+-        char *pp = strchr(str, ';');
++        const char *pp = strchr(str, ';');
+         unsigned size = strlen(pp);
+         if (pp){
+             size = (pp - str);
+diff -ur licq-1.3.6.orig/src/translate.cpp licq-1.3.6/src/translate.cpp
+--- licq-1.3.6.orig/src/translate.cpp	2008-07-02 17:02:49.000000000 +0300
++++ licq-1.3.6/src/translate.cpp	2009-08-07 14:36:18.000000000 +0300
+@@ -76,7 +76,7 @@
+ bool CTranslator::setTranslationMap(const char* mapFileName)
+ {
+   // Map name is the file name with no path
+-  char* sep = strrchr(mapFileName, '/');
++  const char* sep = strrchr(mapFileName, '/');
+   const char* mapName = (sep == NULL ? mapFileName : sep + 1);
+ 
+   if (strcmp(mapName, "LATIN_1") == 0)
+diff -ur licq-1.3.6.orig/src/utility.cpp licq-1.3.6/src/utility.cpp
+--- licq-1.3.6.orig/src/utility.cpp	2008-07-25 23:34:44.000000000 +0300
++++ licq-1.3.6/src/utility.cpp	2009-08-07 14:34:28.000000000 +0300
+@@ -46,7 +46,7 @@
+ //=====CUtilityManager==========================================================
+ int SelectUtility(const struct dirent *d)
+ {
+-  char *pcDot = strrchr(d->d_name, '.');
++  const char *pcDot = strrchr(d->d_name, '.');
+   if (pcDot == NULL) return (0);
+   return (strcmp(pcDot, ".utility") == 0);
+ }
