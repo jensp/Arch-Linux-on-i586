@@ -30,7 +30,7 @@ license=('custom')
 
 build() {
   install -d -m755 ${pkgdir}/usr/lib/mozilla/plugins/ || return 1
-  if [ "${CARCH}" = 'i686' ]; then
+  if [[ "${CARCH}" = i?86 ]]; then
     install -m755 ${srcdir}/libflashplayer.so ${pkgdir}/usr/lib/mozilla/plugins/ || return 1
   elif [ "${CARCH}" = 'x86_64' ]; then
     install -m755 ${srcdir}/libflashplayer.so ${pkgdir}/usr/lib/mozilla/plugins/ || return 1
