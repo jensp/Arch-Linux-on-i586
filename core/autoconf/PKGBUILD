@@ -2,7 +2,7 @@
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=autoconf
-pkgver=2.63
+pkgver=2.64
 pkgrel=1
 pkgdesc="A GNU tool for automatically configuring source code"
 arch=('i586' 'i686' 'x86_64')
@@ -12,7 +12,7 @@ groups=('base-devel')
 depends=('awk' 'm4' 'diffutils' 'bash')
 install=autoconf.install
 source=(ftp://ftp.gnu.org/pub/gnu/${pkgname}/${pkgname}-${pkgver}.tar.gz)
-md5sums=('43d76649fb86cd21d64f68c48d5abdcf')
+md5sums=('30a198cef839471dd4926e92ab485361')
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}
