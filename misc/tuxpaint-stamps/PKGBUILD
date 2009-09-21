@@ -1,0 +1,17 @@
+# Contributor:  royrocks <royrocks13@gmail.com>
+# change to i586 killajoe <archlinux@kamprad.net>
+pkgname=tuxpaint-stamps
+pkgver=2008.06.30
+pkgrel=1
+pkgdesc="Additional stamps for Tux Paint"
+arch=(i586)
+url="http://www.tuxpaint.org"
+license="GPL"
+depends=('tuxpaint')
+source=(http://downloads.sourceforge.net/sourceforge/tuxpaint/$pkgname-$pkgver.tar.gz)
+md5sums=('9c84055a582698587c085a0f5a9dab0a')
+build() {
+ cd $startdir/src/$pkgname-$pkgver
+ make PREFIX=/usr || return 1
+ make PREFIX=$startdir/pkg/usr DESTDIR=$startdir/pkg install-all
+}
