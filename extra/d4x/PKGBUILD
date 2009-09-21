@@ -1,0 +1,30 @@
+# $Id: PKGBUILD 6077 2008-07-23 16:36:20Z hugo $
+# Maintainer: Hugo Doria <hugo@archlinux.org>
+
+pkgname=d4x
+pkgver=2.5.7.1
+pkgrel=2
+pkgdesc="A GUI XFree86 program for downloading files"
+arch=('i586' 'i686' 'x86_64')
+depends=('esd' 'gtk2' 'openssl<=0.9.8' 'alsa-lib' 'libstdc++5' 'audiofile') 
+source=(http://repository.slacky.eu/slackware-12.2/network/d4x/2.5.7.1/src/d4x-2.5.7.1.tar.bz2
+	d4x-gtkurl.patch
+	d4x-fix-gcc44.patch)
+url="http://www.krasu.ru/soft/chuchelo/"
+license=('PerlArtistic')
+makedepends=('boost')
+conflicts=('downloaderx')
+replaces=('downloaderx')
+md5sums=('68d6336c3749a7caabb0f5a5f84f4102'
+         '3639f6d3fb7253a50a085c0b1037268b'
+         '49541b12908520f131a22d31a37d4a59')
+
+build() {
+    cd ${srcdir}/${pkgname}-${pkgver}
+    
+    patch -Np1 < ${srcdir}/d4x-gtkurl.patch || return 1
+    patch -Np1 -i "$srcdir"/d4x-fix-gcc44.patch || return 1
+    ./configure --prefix=/usr
+    make || return 1
+    make prefix=${pkgdir}/usr install
+}

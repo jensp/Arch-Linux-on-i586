@@ -1,0 +1,29 @@
+# $Id: PKGBUILD 36306 2009-04-20 22:10:59Z andyrtr $
+# Maintainer: tobias <tobias funnychar archlinux.org>
+# Contributor: Corrado Primier <bardo@aur.archlinux.org>
+
+pkgname=xfce4-settings
+pkgver=4.6.1
+pkgrel=1
+pkgdesc="Settings manager for xfce"
+arch=('i686' 'x86_64')
+license=('GPL2')
+url="http://www.xfce.org/"
+groups=('xfce4')
+depends=('exo>=0.3.101' 'libnotify' 'libxfcegui4>=4.6.1' 'libxklavier' 'libwnck')
+makedepends=('intltool')
+makedepends=('intltool')
+optdepends=('libcanberra: for sound control')
+conflicts=('xfce-mcs-manager')
+replaces=('xfce-mcs-manager')
+source=(http://mocha.xfce.org/archive/xfce-${pkgver}/src/${pkgname}-${pkgver}.tar.bz2)
+md5sums=('dc1c8704471c5b0104fa10c30eb60cb6')
+
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static \
+	--enable-libxklavier --enable-sound-settings
+  make || return 1
+  make DESTDIR=${pkgdir} install || return 1
+}
+

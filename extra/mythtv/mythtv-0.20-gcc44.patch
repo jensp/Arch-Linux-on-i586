@@ -1,0 +1,12 @@
+diff -ru libs.orig/libmythfreemheg/Text.cpp libs/libmythfreemheg/Text.cpp
+--- libs.orig/libmythfreemheg/Text.cpp	2009-09-16 16:10:13.559582253 +0000
++++ libs/libmythfreemheg/Text.cpp	2009-09-16 16:11:24.092873642 +0000
+@@ -242,7 +242,7 @@
+     }
+     else { // Textual form.
+         const unsigned char *str = attrs.Bytes();
+-        const char *p = (const char *)str;
++        char *p = (const char *)str;
+         char *q = strchr(p, '.'); // Find the terminating dot
+         if (q != NULL) { // plain, italic etc.
+             if (q-p == 6 && strncmp(p, "italic", 6) == 0) style = 1;

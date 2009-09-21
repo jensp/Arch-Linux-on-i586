@@ -1,0 +1,25 @@
+# $Id: PKGBUILD 30074 2009-03-16 02:59:12Z eric $
+# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Ben <ben@benmazer.ner>
+
+pkgname=fluxter
+pkgver=0.1.0
+pkgrel=4
+pkgdesc="A workspace pager for fluxbox"
+arch=('i586' 'i686' 'x86_64')
+url="http://benedict.isomedia.com/homes/stevencooper/projects/fluxter.html"
+license=('GPL')
+depends=('gcc-libs' 'libx11' 'libsm')
+source=(http://benedict.isomedia.com/homes/stevencooper/files/${pkgname}-${pkgver}.tar.gz
+	http://openoffice.mirrors.tds.net/pub/gentoo-portage/x11-misc/fluxter/files/fluxter-0.1.0-asneeded.patch)
+md5sums=('6d18553220e8fc33c54762d2e7d31528'
+         '1cdd955b926450686b17ce552bedfe1b')
+
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  patch -Np1 -i "$srcdir"/fluxter-0.1.0-asneeded.patch || return 1
+  autoreconf
+  ./configure --prefix=/usr || return 1
+  make || return 1
+  make DESTDIR=${pkgdir} install || return 1
+}

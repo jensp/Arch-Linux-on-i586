@@ -1,0 +1,22 @@
+# Contributor: Jens Pranaitis <jens@chaox.net>
+
+pkgname=libgda1
+pkgver=1.2.4
+pkgrel=1
+pkgdesc="version 1 of the data abstraction layer; with mysql, pgsql, ldap, xml, sqlite providers"
+arch=(i586)
+license=('GPL')
+depends=('glib2>=2.20.1' 'libxslt' 'db>=4.7' 'ncurses>=5.7-2' 'libsoup>=2.26.1'
+         'libmysqlclient>=5.1.32-2' 'postgresql-libs>=8.3.7' 'libldap>=2.3.43-3' 'unixodbc' 'sqlite3>=3.6.13')
+makedepends=('intltool' 'pkgconfig' 'openjdk6')
+options=('!libtool')
+url="http://www.gnome-db.org"
+source=(http://ftp.gnome.org/pub/GNOME/sources/libgda/1.2/libgda-${pkgver}.tar.bz2)
+md5sums=('512a8ed842ce98eb432e69bd6867f437')
+
+build() {
+  cd "${srcdir}/libgda-${pkgver}"
+  ./configure --prefix=/usr --sysconfdir=/etc --disable-static || return 1
+  make || return 1
+  make DESTDIR="${pkgdir}" install || return 1
+}

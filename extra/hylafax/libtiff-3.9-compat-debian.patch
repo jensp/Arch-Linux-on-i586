@@ -1,0 +1,12 @@
+diff -urNad hylafax-6.0.3~/configure hylafax-6.0.3/configure
+--- hylafax-6.0.3~/configure	2009-05-15 19:50:52.000000000 +0200
++++ hylafax-6.0.3/configure	2009-08-22 23:16:02.000000000 +0200
+@@ -2551,7 +2551,7 @@
+ 	if [  -ge 19960307 ]; then
+ 	    case  in
+ 		3.4)		tiff_runlen_t="uint16" ;;
+-		3.[5678])	tiff_runlen_t="uint32" ;;
++		3.[56789])	tiff_runlen_t="uint32" ;;
+ 	    esac
+ 	fi
+     else

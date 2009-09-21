@@ -1,0 +1,11 @@
+--- src/pixelview.h.orig	2009-09-20 22:18:55.406106133 +0000
++++ src/pixelview.h		2009-09-20 22:19:08.936100456 +0000
+@@ -34,7 +34,7 @@
+ /**
+ @author Tim Fechtner
+ */
+-class PixelView : protected QScrollView
++class PixelView : public QScrollView
+ {
+ Q_OBJECT
+ public:

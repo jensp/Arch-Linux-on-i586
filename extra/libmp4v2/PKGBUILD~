@@ -1,0 +1,29 @@
+# $Id: PKGBUILD 3482 2008-06-22 21:06:58Z jgc $
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+
+pkgname=libmp4v2
+pkgver=1.9.1
+pkgrel=1
+pkgdesc="MPEG-4 library and tools from mpeg4ip"
+arch=('i586' 'i686')
+license=('custom')
+url="http://code.google.com/p/mp4v2"
+depends=('gcc-libs')
+options=('!libtool')
+source=(http://mp4v2.googlecode.com/files/mp4v2-$pkgver.tar.bz2)
+md5sums=('986701929ef15b03155ac4fb16444797')
+build() {
+  cd ${startdir}/src/mp4v2-${pkgver}
+  touch bootstrapped
+  echo "" > lib/rtp/configure
+  echo "" > lib/SDLAudio/configure
+
+  ./configure --prefix=/usr || return 1
+  for dir in lib/gnu lib/mp4av lib/mp4v2; do
+    cd ${startdir}/src/mpeg4ip-${pkgver}/${dir}
+    make || return 1
+    make DESTDIR=${startdir}/pkg install || return 1
+  done
+  install -m755 -d ${pkgdir}/usr/share/licenses/${pkgname}
+  install -m644 ${srcdir}/mpeg4ip-${pkgver}/COPYING ${pkgdir}/usr/share/licenses/${pkgname}/ || return 1
+}

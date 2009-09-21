@@ -1,0 +1,11 @@
+--- src/downloadmanagers/fancy.cpp.orig	2009-09-12 23:49:06.381358003 +0000
++++ src/downloadmanagers/fancy.cpp	2009-09-12 23:49:46.572178956 +0000
+@@ -32,7 +32,7 @@
+ #include <unistd.h>
+ #include <iostream>
+ #include <math.h>
+-
++#include <stdio.h>
+ 
+ // GLOBALS
+ 

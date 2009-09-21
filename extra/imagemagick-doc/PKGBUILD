@@ -1,0 +1,23 @@
+# $Id: PKGBUILD 50908 2009-09-02 23:37:50Z eric $
+# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: Eric Belanger <eric@archlinux.org>
+
+pkgname=imagemagick-doc
+pkgver=6.5.5.10
+pkgrel=1
+pkgdesc="The ImageMagick documentation (utilities manuals and libraries API)"
+arch=('any')
+url="http://www.imagemagick.org/"
+license=('custom')
+depends=('imagemagick')
+options=('!makeflags')
+source=(ftp://ftp.imagemagick.org/pub/ImageMagick/ImageMagick-${pkgver%.*}-${pkgver##*.}.tar.bz2)
+md5sums=('36bcef67cae5d5fce2899acb9200213a')
+
+build() {
+  cd "${srcdir}/ImageMagick-${pkgver%.*}-${pkgver##*.}"
+  ./configure --prefix=/usr || return 1
+  make DESTDIR="${pkgdir}" install-data-html || return 1
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE" || return 1
+  install -D -m644 NOTICE "${pkgdir}/usr/share/licenses/${pkgname}/NOTICE" || return 1
+}

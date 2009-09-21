@@ -1,0 +1,30 @@
+From b71c327960c33e2d87991c0efcf1aa6370abc639 Mon Sep 17 00:00:00 2001
+From: =?utf-8?q?Diego=20E.=20'Flameeyes'=20Petten=C3=B2?= <flameeyes@gmail.com>
+Date: Tue, 13 Jan 2009 00:41:00 +0100
+Subject: [PATCH] Fix parallel install by using install-data-hook rather than -local.
+
+Quoting the automake manual:
+
+> With the `-local' targets, there is no particular guarantee of execution
+> order; typically, they are run early, but with parallel make, there is no
+> way to be sure of that.
+---
+ mono/Makefile.am |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/mono/Makefile.am b/mono/Makefile.am
+index 3149d15..65af0c0 100644
+--- a/mono/Makefile.am
++++ b/mono/Makefile.am
+@@ -70,7 +70,7 @@ $(ASSEMBLY): $(build_sources) generated-stamp $(srcdir)/$(ASSEMBLY_NAME).snk
+ 	-keyfile:$(srcdir)/$(ASSEMBLY_NAME).snk $(build_sources) generated/*.cs
+ 	sn -q -R $(ASSEMBLY) $(srcdir)/$(ASSEMBLY_NAME).snk
+ 
+-install-data-local:
++install-data-hook:
+ 	@if test -n '$(TARGET)'; then									\
+ 	  if test -n '$(DESTDIR)'; then								\
+ 	    echo "$(GACUTIL) /i $(ASSEMBLY) /f /package $(PACKAGE_SHARP) /root $(DESTDIR)$(prefix)/lib";		\
+-- 
+1.6.1
+

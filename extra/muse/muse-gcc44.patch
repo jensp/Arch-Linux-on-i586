@@ -1,0 +1,11 @@
+--- grepmidi/grepmidi.cpp.orig	2009-09-17 01:12:48.476299439 +0000
++++ grepmidi/grepmidi.cpp	2009-09-17 01:13:07.407853835 +0000
+@@ -277,7 +277,7 @@
+ //   grep
+ //---------------------------------------------------------
+ 
+-int grepMidi(const char* name)
++int grepMidi(char* name)
+       {
+       curName = name;
+       char*p = strrchr(name, '.');

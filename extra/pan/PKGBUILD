@@ -1,0 +1,27 @@
+# $Id: PKGBUILD 7345 2008-07-30 21:28:50Z eric $
+# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: deepfreeze <sgrealis1@comcast.net>
+
+pkgname=pan
+pkgver=0.133
+pkgrel=1
+pkgdesc="A powerful Newsgroup Article reader based on GTK2"
+arch=('i586' 'i686' 'x86_64')
+url="http://pan.rebelbase.com/"
+license=('GPL2')
+depends=('gtkspell' 'pcre' 'gmime')
+conflicts=('pan-devel')
+replaces=('pan-devel')
+options=('!makeflags')
+source=(http://pan.rebelbase.com/download/releases/${pkgver}/source/${pkgname}-${pkgver}.tar.bz2
+	http://ftp.eenet.ee/gentoo-portage/net-nntp/pan/files/pan-0.133-gcc44.patch)
+md5sums=('ca165da8557605d89d327cff78891b89'
+         '9e2637e27eaa439fef51786d4cc45461')
+
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  patch -Np1 -i "$srcdir"/pan-0.133-gcc44.patch || return 1
+  ./configure --prefix=/usr || return 1
+  make || return 1
+  make DESTDIR=${pkgdir} install || return 1
+}

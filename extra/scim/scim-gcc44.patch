@@ -1,0 +1,11 @@
+--- src/ltdl.cpp.orig	2009-09-16 23:36:06.237008896 +0000
++++ src/ltdl.cpp	2009-09-16 23:40:46.426846479 +0000
+@@ -3357,7 +3357,7 @@
+    instead.  */
+ lt_dlhandle
+ lt_dlopenext (
+-     const char *filename)
++     char *filename)
+ {
+   lt_dlhandle	handle		= 0;
+   char *	tmp		= 0;

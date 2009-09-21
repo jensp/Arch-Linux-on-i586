@@ -1,0 +1,18 @@
+# $Id: PKGBUILD 24130 2009-01-14 08:14:18Z tpowa $
+#Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+
+pkgname=memtest86+
+pkgver=2.11
+pkgrel=1
+pkgdesc="An advanced memory diagnostic tool"
+arch=(i586 i686 x86_64)
+url="http://www.memtest.org"
+license=('GPL2')
+depends=()
+source=(http://www.memtest.org/download/$pkgver/$pkgname-$pkgver.bin.gz)
+install=memtest86+.install
+
+build() {
+   install -m644 -D $startdir/src/$pkgname-$pkgver.bin $startdir/pkg/boot/memtest86+/memtest.bin   
+}
+md5sums=('c58f714d13eab2f3deeb3d29940e19bb')

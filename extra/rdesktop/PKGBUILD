@@ -1,0 +1,20 @@
+# $Id: PKGBUILD 1593 2008-05-13 16:47:19Z dan $
+# Maintainer: Dan McGee <dan@archlinux.org>
+pkgname=rdesktop
+pkgver=1.6.0
+pkgrel=2
+depends=('libx11' 'openssl' 'libao' 'libsamplerate')
+pkgdesc="rdesktop is used to connect to windows terminal servers"
+license=('GPL')
+arch=('i586' 'i686' 'x86_64')
+source=(http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz)
+url="http://www.rdesktop.org/"
+
+build() {
+   cd $startdir/src/$pkgname-$pkgver
+   ./configure --prefix=/usr
+   make || return 1
+   make DESTDIR=$startdir/pkg install
+}
+
+md5sums=('c6fcbed7f0ad7e60ac5fcb2d324d8b16')

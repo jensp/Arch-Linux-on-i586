@@ -1,0 +1,25 @@
+# $Id: PKGBUILD 43443 2009-06-24 02:05:46Z eric $
+# Maintainer: Eric Belanger <eric@archlinux.org>
+# Contributor: William Rea <sillywilly@gmail.com>
+
+pkgname=fontforge
+pkgver=20090622
+pkgrel=1
+pkgdesc="An outline and bitmap font editor"
+arch=('i586' 'i686' 'x86_64')
+url="http://fontforge.sourceforge.net"
+license=('BSD')
+depends=('libxkbui' 'libxi')
+makedepends=('freetype2')
+options=('!libtool' '!makeflags')
+source=(http://downloads.sourceforge.net/sourceforge/fontforge/fontforge_full-${pkgver}.tar.bz2)
+md5sums=('3f4ff2d2dab200f47595bff38baa13ca')
+sha1sums=('bc638eeeb4cf2d540773bacc52cc6bac1c6ca76f')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  ./configure --prefix=/usr --mandir=/usr/share/man --with-multilayer --with-devicetables --without-python || return 1
+  make || return 1
+  make DESTDIR="${pkgdir}" install || return 1
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE" || return 1
+}

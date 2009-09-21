@@ -1,0 +1,38 @@
+# $Id: PKGBUILD 2541 2008-06-06 15:00:54Z jgc $
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Contributor: Ben <ben@benmazer.net>
+
+pkgname=gmime
+pkgver=2.2.24
+pkgrel=1
+pkgdesc="Core mime parsing library"
+arch=(i586 i686 x86_64)
+license=('GPL')
+url="http://spruce.sourceforge.net/gmime/"
+depends=('glib2>=2.16.3' 'zlib')
+makedepends=('gtk-sharp-2>=2.12.0' 'pkgconfig')
+options=('!libtool' '!makeflags')
+source=(http://ftp.gnome.org/pub/GNOME/sources/${pkgname}/2.2/${pkgname}-${pkgver}.tar.bz2
+	http://ftp.uni-kl.de/pub/linux/gentoo-portage/dev-libs/gmime/files/gmime-2.2.23-sign-assembly.patch
+	http://ftp.uni-kl.de/pub/linux/gentoo-portage/dev-libs/gmime/files/gmime-sharp.snk)
+md5sums=('2d10d758de769c198efad50b086ee423'
+         '4e1d955e937d6503cc59b5b2cfb19e1c'
+         '1fcabe269ec5c5f64bcc1cc4d21fd914')
+build() {
+  # get rid of that .wapi errors in fakeroot
+  export MONO_SHARED_DIR="${startdir}/src/weird"
+  mkdir -p "${MONO_SHARED_DIR}"
+
+  cd ${startdir}/src/${pkgname}-${pkgver}
+  patch -Np1 -i "$srcdir"/gmime-2.2.23-sign-assembly.patch || return 1
+  cp "$srcdir"/gmime-sharp.snk mono/ || return 1
+  autoreconf
+  libtoolize
+  ./configure --prefix=/usr || return 1
+  make || return 1
+  make DESTDIR=${startdir}/pkg install || return 1
+
+  # These are gmime alternatives for the same shareutils tools
+  mv ${startdir}/pkg/usr/bin/uuencode ${startdir}/pkg/usr/bin/guuencode || return 1
+  mv ${startdir}/pkg/usr/bin/uudecode ${startdir}/pkg/usr/bin/guudecode || return 1
+}

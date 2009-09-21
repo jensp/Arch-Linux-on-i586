@@ -1,0 +1,34 @@
+# $Id: PKGBUILD 7538 2008-08-02 21:18:58Z jgc $
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+pkgname=pdns-recursor
+pkgver=3.1.7
+pkgrel=1
+pkgdesc="PowerDNS recursor"
+url="http://www.powerdns.com"
+license=('GPL')
+arch=('i586' 'i686' 'x86_64')
+depends=('gcc-libs>=4.3.1')
+makedepends=('boost')
+backup=('etc/powerdns/recursor.conf')
+source=(http://downloads.powerdns.com/releases/${pkgname}-${pkgver}.tar.bz2
+        pdns-recursor.rc
+	http://gentoo.mirror.at.stealer.net/portage/net-dns/pdns-recursor/files/pdns-recursor-3.1.7-boost-1.37.0.patch
+	pdns-recursor-gcc44.patch)
+md5sums=('e7521055f949ba8e9e77fe27411be2ed'
+         '5b3aa3c8ed2edf55821af16cfb7ef252'
+         'e19e0aeec3c8f7894a8dda95bb34370b'
+         '7136c5ca8015131d09a4dcaf0d738dd5')
+
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  patch -Np2 -i "$srcdir"/pdns-recursor-3.1.7-boost-1.37.0.patch || return 1
+  echo "gcc44"
+  patch -Np0 -i "$srcdir"/pdns-recursor-gcc44.patch || return 1
+  ./configure || return 1
+  make || return 1
+  make DESTDIR=${pkgdir} install || return 1
+  install -d -m755 ${pkgdir}/etc/rc.d
+  mv ${pkgdir}/etc/powerdns/recursor.conf-dist ${pkgdir}/etc/powerdns/recursor.conf || return 1
+  install -m755 ${srcdir}/pdns-recursor.rc ${pkgdir}/etc/rc.d/pdns-recursor || return 1
+  rm -rf ${pkgdir}/etc/init.d
+}

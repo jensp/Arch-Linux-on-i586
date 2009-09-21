@@ -1,0 +1,29 @@
+# $Id: PKGBUILD 29754 2009-03-12 03:52:11Z eric $
+# Maintainer: damir <damir@archlinux.org>
+
+pkgname=uim
+pkgver=1.5.6
+pkgrel=1
+pkgdesc="multilingual input method library"
+arch=("i586" "i686" "x86_64")
+url="http://code.google.com/p/uim/"
+license=('custom')
+depends=('m17n-lib' 'ncurses' 'gtk2')
+makedepends=('gnome-panel' 'pkgconfig' 'gettext')
+optdepends=('gnome-panel: for using the GNOME applet')
+options=(!libtool)
+install=uim.install
+source=("http://uim.googlecode.com/files/$pkgname-$pkgver.tar.gz"
+	"http://kde.etf.rs/gentooportage/app-i18n/uim/files/uim-1.5.5-applet.patch")
+md5sums=('c977b3ee01d63acc13b0bea129544dab'
+         '2fd2e103e012be61aef8aa61dd6e3563')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  #patch -Np1 -i "$srcdir"/uim-1.5.5-applet.patch || return 1
+  #autoreconf
+  ./configure --prefix=/usr --libexecdir=/usr/lib/uim || return 1
+  make || return 1
+  make DESTDIR=$pkgdir install || return 1
+  install -D -m644 COPYING $pkgdir/usr/share/licenses/$pkgname/COPYING
+}

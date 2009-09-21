@@ -1,0 +1,108 @@
+--- cdown.c.orig	2009-09-11 17:40:59.668876751 +0000
++++ cdown.c	2009-09-11 17:41:03.652197526 +0000
+@@ -325,7 +325,7 @@
+ }
+ 
+ /************************************************************************/
+-/* Procedure:  getline
++/* Procedure:  _getline
+  * Purpose:    read a line of text from the CDDB server
+  * 
+  * Inputs:     
+@@ -333,14 +333,14 @@
+  * Returns:    The line of text
+  * Notes:  
+  *   1. The CDDB databases use \r\n to end lines.  All lines returned
+- *      by getline() have the \r and \n stripped.
++ *      by _getline() have the \r and \n stripped.
+  *   2. Non-reentrant: the memory buffer returned previously is
+  *      recycled
+  *   3. Do NOT modify the contents of the returned buffer past the
+  *      NULL - data from the network is stored there
+  */
+ /************************************************************************/
+-char *getline(void) {
++char *_getline(void) {
+   static char *buffer = NULL;
+   static char *lastline = NULL;
+   static int buffered = 0;
+@@ -451,7 +451,7 @@
+   char *cdtitle;
+ 
+   netprintf(sock, "cddb read %s %s\n", categ, discid);
+-  message = getline();
++  message = _getline();
+   switch (atoi(message)) {
+     case 401: fprintf(stderr, "error: entry not found\n"); return;
+     case 402: fprintf(stderr, "error: server error\n"); return;
+@@ -461,13 +461,13 @@
+     default: fprintf(stderr, "error: bad message: %s\n", message); return;
+   }
+   while (iRawMode) {	/* infinite loop, or skip if !iRawMode */
+-    message = getline();
++    message = _getline();
+     if (!strcmp (message, "."))
+       return;
+     printf ("%s\r\n", message);
+   }
+   do {
+-    message = getline();
++    message = _getline();
+     firstword = strchr(message, '=');
+     if (firstword != NULL) {
+       *firstword = '\0';
+@@ -511,7 +511,7 @@
+   int input = 0;
+   int exact = 1;
+ 
+-  message = getline();
++  message = _getline();
+   switch (atoi(message)) {
+     case 403: fprintf(stderr, "error: database entry is corrupt\n"); return;
+     case 409: fprintf(stderr, "error: no handshake\n"); return;
+@@ -523,7 +523,7 @@
+   if (!exact) {
+     fprintf(stderr, "CD has no exact match\n 0: None\n");
+     do {
+-      message = getline();
++      message = _getline();
+       if (strcmp(message, ".") != 0) {
+         matches = realloc(matches, sizeof(char*) * (++count));
+         fprintf(stderr, " %d: ", count); printcd(message);
+@@ -628,15 +628,15 @@
+ void parsesites(void) {
+   char *buffer;
+ 
+-  buffer = getline();
++  buffer = _getline();
+   switch (atoi(buffer)) {
+     case 210: break;		/* OK */
+     case 401: fprintf(stderr, "error: no site list available\n"); return;
+   }
+-  buffer = getline();
++  buffer = _getline();
+   do {
+     printf("%s\n", buffer);
+-  } while (strcmp(buffer = getline(), ".") != 0);
++  } while (strcmp(buffer = _getline(), ".") != 0);
+ }
+ 
+ /************************************************************************/
+@@ -755,7 +755,7 @@
+       exit(3);
+   }
+ 
+-  bleh = getline();
++  bleh = _getline();
+   if (!signon(bleh)) { 
+       errormsg("%s:  signon error on host %s", progname, pszHost);
+       close(sock); 
+@@ -773,7 +773,7 @@
+     getuname(), gethname(), progname, VERSIONSTRING);
+   
+   /* get welcome message */
+-  bleh = getline();
++  bleh = _getline();
+   if (!welcome(bleh)) { 
+       errormsg("%s: bad welcome message [%s]", progname, bleh);
+       close(sock); 

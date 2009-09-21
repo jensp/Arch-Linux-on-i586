@@ -1,0 +1,25 @@
+# $Id: PKGBUILD 42657 2009-06-18 06:24:36Z allan $
+# Maintainer: Allan McRae <allan@archlinux.org>
+# Contributer: Jason Chu <jchu@xentac.net>
+
+pkgname=openal
+pkgver=1.8.466
+pkgrel=1
+pkgdesc="OpenAL audio library for use with opengl"
+arch=('i586' 'i686' 'x86_64')
+url="http://www.openal.org/"
+license=('LGPL')
+depends=('glibc')
+makedepends=('alsa-lib' 'sdl' 'pkgconfig' 'cmake')
+options=('!libtool')
+source=(http://kcat.strangesoft.net/openal-releases/openal-soft-${pkgver}.tar.bz2)
+md5sums=('28d500e0a6b0a7a824b509ad9eaba7be')
+
+build() {
+  cd ${srcdir}/${pkgname}-soft-${pkgver}
+  mkdir build
+  cd build
+  cmake -D CMAKE_INSTALL_PREFIX=/usr -D CMAKE_BUILD_TYPE=Release .. || return 1
+  make || return 1
+  make DESTDIR=${pkgdir}/ install  || return 1
+}

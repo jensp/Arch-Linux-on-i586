@@ -1,0 +1,26 @@
+# $Id: PKGBUILD 44775 2009-07-04 10:54:24Z andyrtr $
+# Maintainer: tobias <tobias at archlinux.org>
+# Contributor: Aurelien Foret <orelien@chez.com>
+
+pkgname=xfce4-clipman-plugin
+pkgver=1.0.2
+pkgrel=1
+pkgdesc="A clipboard plugin for the Xfce4 panel"
+arch=(i686 x86_64)
+license=('custom')
+url="http://xfce-goodies.berlios.de/"
+groups=('xfce4-goodies')
+depends=('xfce4-panel')
+makedepends=('pkgconfig' 'intltool')
+options=('!libtool')
+source=(http://goodies.xfce.org/releases/${pkgname}/${pkgname}-${pkgver}.tar.bz2)
+md5sums=('37fb51a8e268819c5e0c71e26ef4d0f8')
+
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  ./configure --prefix=/usr --sysconfdir=/etc --libexecdir=/usr/lib \
+    --localstatedir=/var --disable-static
+  make || return 1
+  make DESTDIR=${pkgdir} install || return 1
+  install -Dm644 COPYING ${pkgdir}/usr/share/licenses/${pkgname}/COPYING
+}

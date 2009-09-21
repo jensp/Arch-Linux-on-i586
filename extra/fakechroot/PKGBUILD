@@ -1,0 +1,25 @@
+# $Id: PKGBUILD 33076 2009-04-04 06:51:40Z allan $
+# Maintainer : Allan McRae <allan@archlinux.org>
+# Contributor: Aaron Griffin <aaron@archlinux.org>
+
+pkgname=fakechroot
+pkgver=2.9.1
+pkgrel=1
+pkgdesc="Gives a fake chroot environment"
+arch=('i586' 'i686' 'x86_64')
+url="http://fakechroot.alioth.debian.org"
+license=('LGPL')
+options=('!libtool')
+install=fakechroot.install
+source=(http://chaox.net/~jens/$pkgname-$pkgver.tar.xz)
+md5sums=('fcac00bb7553bedd0c221e75e8b43eab')
+
+build()
+{
+  cd ${srcdir}/${pkgname}-${pkgver}
+  sed -i 's|1.10|1.11|g' *
+  ./autogen.sh
+  ./configure --prefix=/usr --libdir=/usr/lib/libfakeroot
+  make || return 1
+  make DESTDIR=${pkgdir} install
+}

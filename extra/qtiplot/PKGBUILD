@@ -1,0 +1,52 @@
+# $Id: PKGBUILD 47731 2009-07-25 20:09:09Z giovanni $
+# Maintainer: Ronald van Haren <ronald.archlinux.org>
+# Contributor: damir <damir.archlinux.org>
+
+pkgname=qtiplot
+pkgver=0.9.7.9
+pkgrel=1
+pkgdesc="Data analysis and scientific plotting - free clone of Origin"
+arch=('i586' 'i686' 'x86_64')
+url="http://soft.proindependent.com/qtiplot.html"
+depends=('muparser>=1.30' 'gsl' 'pyqt' 'sip' 'boost>=1.39.0' 'libgl' 'qwt')
+# build against liborigin provided in the package ...
+# build against qwtplot3d provided in the package ...
+# as systemwide one doesn't provide all needed functions
+makedepends=('pkgconfig')
+license=('GPL2')
+source=(http://soft.proindependent.com/src/qtiplot-$pkgver.tar.bz2
+        $pkgname.desktop
+        $pkgname.png
+        qtiplot.pro.archlinux
+        qwtplot3d_gcc.patch
+	http://gentoo.mirror.at.stealer.net/portage/sci-visualization/qtiplot/files/qtiplot-0.9.7.7-gcc44.patch)
+md5sums=('08e4943cadd5ee39e28e4ce0d61d475a'
+         '56bd53f4f1367c285086acb969f13348'
+         'ad8affbd6f0d5cbdcde46c923ee2668a'
+         '7af559c2986f5c65616331dc36859642'
+         'ab02c436ec2c04b1838cb5517383b4eb'
+         '2e5510f62873171bb1a658af49e20bf7')
+
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  #sed -i "s:elif:else:g" qtiplot/src/scripting/ScriptEdit.cpp
+  #patch -Np1 -i ${srcdir}/qwtplot3d_gcc.patch || return 1
+  #patch -Np1 -i "$srcdir"/qtiplot-0.9.7.7-gcc44.patch
+  cd ${srcdir}/${pkgname}-${pkgver}/${pkgname}
+  install -Dm644 ${srcdir}/qtiplot.pro.archlinux qtiplot.pro
+
+  sed -i 's#d_python_config_folder + "#"/usr/share/qtiplot#' src/core/ApplicationWindow.cpp
+
+  export QMAKESPEC=linux-g++
+
+  qmake qtiplot.pro || return 1
+  make QTDIR=/usr/ QMAKESPEC=linux-g++ || return 1
+  INSTALL_ROOT=${pkgdir} make install || return 1
+
+  # make it nice:
+  install -D -m644 ${srcdir}/${pkgname}.png \
+  	${pkgdir}/usr/share/pixmaps/${pkgname}.png || return 1
+  install -D -m644 ${srcdir}/${pkgname}.desktop \
+  	${pkgdir}/usr/share/applications/${pkgname}.desktop || return 1
+}
+

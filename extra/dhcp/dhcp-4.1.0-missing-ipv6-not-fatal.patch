@@ -1,0 +1,51 @@
+diff -up dhcp-4.1.0/common/discover.c.noipv6 dhcp-4.1.0/common/discover.c
+--- dhcp-4.1.0/common/discover.c.noipv6	2009-02-18 10:44:20.000000000 -1000
++++ dhcp-4.1.0/common/discover.c	2009-02-18 10:48:27.000000000 -1000
+@@ -443,15 +443,19 @@ begin_iface_scan(struct iface_conf_list 
+ 	}
+ 
+ #ifdef DHCPv6
+-	ifaces->fp6 = fopen("/proc/net/if_inet6", "re");
+-	if (ifaces->fp6 == NULL) {
+-		log_error("Error opening '/proc/net/if_inet6' to "
+-			  "list IPv6 interfaces; %m");
+-		close(ifaces->sock);
+-		ifaces->sock = -1;
+-		fclose(ifaces->fp);
+-		ifaces->fp = NULL;
+-		return 0;
++	if (!access("/proc/net/if_inet6", R_OK)) {
++		ifaces->fp6 = fopen("/proc/net/if_inet6", "re");
++		if (ifaces->fp6 == NULL) {
++			log_error("Error opening '/proc/net/if_inet6' to "
++				  "list IPv6 interfaces; %m");
++			close(ifaces->sock);
++			ifaces->sock = -1;
++			fclose(ifaces->fp);
++			ifaces->fp = NULL;
++			return 0;
++		}
++	} else {
++		ifaces->fp6 = NULL;
+ 	}
+ #endif
+ 
+@@ -719,7 +723,7 @@ next_iface(struct iface_info *info, int 
+ 		return 1;
+ 	}
+ #ifdef DHCPv6
+-	if (!(*err)) {
++	if (!(*err) && ifaces->fp6) {
+ 		return next_iface6(info, err, ifaces);
+ 	}
+ #endif
+@@ -736,7 +740,8 @@ end_iface_scan(struct iface_conf_list *i
+ 	close(ifaces->sock);
+ 	ifaces->sock = -1;
+ #ifdef DHCPv6
+-	fclose(ifaces->fp6);
++	if (ifaces->fp6)
++		fclose(ifaces->fp6);
+ 	ifaces->fp6 = NULL;
+ #endif
+ }

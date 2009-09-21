@@ -1,0 +1,26 @@
+# $Id: PKGBUILD 30621 2009-03-21 02:44:57Z james $
+# Maintainer: James Rayner <james@archlinux.org>
+# Maintainer: Alexander Fehr <pizzapunk gmail com>
+# Contributor: Sebastian Sareyko <public@nooms.de>
+
+pkgname=nitrogen
+pkgver=1.4
+pkgrel=2
+pkgdesc="Background browser and setter for X windows"
+arch=('i586' 'i686' 'x86_64')
+url="http://projects.l3ib.org/nitrogen/"
+license=('GPL')
+depends=('gtkmm' 'hicolor-icon-theme' 'librsvg')
+install=nitrogen.install
+source=(http://projects.l3ib.org/nitrogen/files/nitrogen-$pkgver.tar.gz
+	http://chaox.net/~jens/nitrogen-fix-png.patch)
+md5sums=('7097983bd0c2c79adee75eff7f174cb1'
+         '934ff66a9999d769575434f372bc14bf')
+
+build() {
+  cd "$srcdir/nitrogen-$pkgver"
+  patch -Np1 -i "$srcdir"/nitrogen-fix-png.patch || return 1
+  ./configure --prefix=/usr || return 1
+  make || return 1
+  make DESTDIR="$pkgdir" install || return 1
+}

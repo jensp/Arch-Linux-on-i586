@@ -1,0 +1,20 @@
+--- speech_tools/speech_class/EST_wave_io.cc.orig	2009-09-14 14:46:01.947328981 +0000
++++ speech_tools/speech_class/EST_wave_io.cc	2009-09-14 14:46:27.090682431 +0000
+@@ -66,7 +66,7 @@
+ static const char *NIST_END_SIG = "end_head\n";
+ #define NIST_HDR_SIZE 1024
+ 
+-int nist_get_param_int(const char *hdr, const char *field, int def_val)
++int nist_get_param_int(char *hdr, const char *field, int def_val)
+ {
+     char *p;
+     int val;
+@@ -82,7 +82,7 @@
+ 
+ }
+ 
+-char *nist_get_param_str(const char *hdr, const char *field, const char *def_val)
++char *nist_get_param_str(char *hdr, const char *field, const char *def_val)
+ {
+     char *p,*val;
+     int size;

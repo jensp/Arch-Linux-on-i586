@@ -1,0 +1,23 @@
+# $Id: PKGBUILD 35774 2009-04-17 03:11:54Z eric $
+# Maintainer: dorphell <dorphell@archlinux.org>
+# Committer: Judd Vinet <jvinet@zeroflux.org>
+pkgname=procmail
+pkgver=3.22
+pkgrel=2
+pkgdesc="Highly configurable auto mail processing."
+arch=(i586 i686 x86_64)
+url="http://www.procmail.org"
+license=('GPL' 'custom:Artistic')
+depends=('glibc')
+source=(http://www.procmail.org/${pkgname}-${pkgver}.tar.gz
+	procmail-3.22-glibc-2.10.patch)
+md5sums=('1678ea99b973eb77eda4ecf6acae53f1'
+         '005b2ec0494aea9eb0a0f199f49cdae6')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  patch -Np1 -i "$srcdir"/procmail-3.22-glibc-2.10.patch || return 1
+  yes n | make LOCKINGTEST="/tmp ." || return 1
+  make BASENAME=$pkgdir/usr MANDIR=$pkgdir/usr/share/man install || return 1
+  install -D -m644 Artistic ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+}

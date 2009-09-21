@@ -1,0 +1,33 @@
+# $Id: PKGBUILD 32874 2009-04-02 03:36:52Z kevin $
+# Contributor: Tom Newsom <Jeepster@gmx.co.uk>
+# Maintainer: Kevin Piche <kevin@archlinux.org>
+
+pkgname=hercules
+pkgver=3.06
+pkgrel=1
+pkgdesc="A software implementation of the mainframe System/370 and ESA/390 architectures"
+url="http://www.hercules-390.org/"
+source=(http://www.hercules-390.org/$pkgname-$pkgver.tar.gz
+	http://mira.sunsite.utk.edu/gentoo/gentoo-x86-portage/app-emulation/hercules/files/hercules-3.06-build.patch
+	http://69.64.45.119/gentoo/portage/app-emulation/hercules/files/hercules-3.06-gcc44.patch)
+arch=(i586 i686 x86_64)
+license=('custom')
+options=(!libtool)
+depends=('bzip2' 'libgcrypt' 'zlib')
+md5sums=('3a356b251e2b7fc49ac2b7244d12d50b'
+         '5d2c83634b1b8a7c764634dc9ff31cfb'
+         'd580f7b42686ac60b8ba3b28638c3532')
+
+build() {
+  cd $startdir/src/$pkgname-$pkgver
+  patch -Np0 -i "$srcdir"/$pkgname-$pkgver-build.patch || return 1
+  patch -Np1 -i "$srcdir"/$pkgname-$pkgver-gcc44.patch || return 1
+  # Change module extension from .la to .so.
+  sed '/HDL_MODULE_SUFFIX/ s/\.la/.so/' -i hdl.h
+  ./configure --prefix=/usr
+  make || return 1
+  make prefix=$startdir/pkg/usr install
+  # license
+  install -D -m644 COPYRIGHT \
+  		$startdir/pkg/usr/share/licenses/hercules/qpl1
+}

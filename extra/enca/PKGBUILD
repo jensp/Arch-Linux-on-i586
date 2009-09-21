@@ -1,0 +1,28 @@
+# $Id: PKGBUILD 50306 2009-08-25 11:21:51Z giovanni $
+# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
+# Contributor: Filip Dvorak <fila@pruda.com>
+
+pkgname=enca
+pkgver=1.10
+pkgrel=1
+pkgdesc="Charset analyser and converter"
+arch=('i586' 'i686' 'x86_64')
+url="http://freshmeat.net/projects/enca/"
+options=('!libtool')
+license=('GPL')
+depends=('recode' 'sh')
+makedepends=('perl')
+source=(http://dl.cihar.com/${pkgname}/${pkgname}-${pkgver}.tar.bz2)
+md5sums=('1831947fb4a9dec6c84bad71ec7ac378')
+
+build() {
+  cd ${srcdir}/$pkgname-$pkgver
+  ./configure --prefix=/usr \
+              --libexecdir=/usr/lib \
+              --mandir=/usr/share/man \
+              --with-librecode=/usr \
+              --enable-external
+  make || return 1
+  make DESTDIR=${pkgdir}/ install
+}
+

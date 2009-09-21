@@ -1,0 +1,35 @@
+# $Id: PKGBUILD 30716 2009-03-21 14:54:35Z allan $
+# Contributor: John Proctor <jproctor@prium.net>
+# Maintainer: juergen <juergen@archlinux.org>
+
+pkgname=ecl
+pkgver=0.9l
+pkgrel=2
+pkgdesc="Embeddable Common Lisp"
+arch=('i586' 'i686' 'x86_64')
+url="http://sourceforge.net/projects/ecls/"
+license=('LGPL')
+depends=('bash' 'gmp')
+makedepends=('texinfo')
+provides=('common-lisp' 'cl-asdf')
+options=('!makeflags')
+source=(http://downloads.sourceforge.net/sourceforge/${pkgname}s/${pkgname}-${pkgver}.tgz)
+md5sums=('a2bff84ccd3a4aa76d14ee3a277038df')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  sed -i 's|-Wl,--rpath,~A|-Wl,--rpath,/usr/lib/ecl|' src/configure || return 1
+  ./configure --build=$CHOST \
+              --prefix=/usr       \
+              --with-tcp          \
+              --with-clos-streams \
+              --enable-shared \
+              --enable-boehm=local \        # ECL fails to build with a system-installed Boehm GC
+              --with-system-gmp \
+              --without-x \
+              --without-clx \
+              --disable-threads
+
+  make || return 1
+  make DESTDIR=$pkgdir install || return 1
+}

@@ -1,0 +1,32 @@
+# $Id: PKGBUILD 43140 2009-06-20 02:19:03Z allan $
+# Maintainer: dorphell <dorphell@archlinux.org>
+# Committer: Judd Vinet <jvinet@zeroflux.org>
+
+pkgname=wvdial
+pkgver=1.60
+pkgrel=3
+pkgdesc="A dialer program to connect to the Internet"
+arch=('i586' 'i686' 'x86_64')
+license=('custom')
+depends=('wvstreams>=4.4.1-2' 'ppp' 'xplc')
+source=(http://alumnit.ca/download/${pkgname}-${pkgver}.tar.gz
+	http://ftp.eenet.ee/gentoo-portage/net-dialup/wvdial/files/wvdial-1.60-destdir.patch
+	http://ftp.eenet.ee/gentoo-portage/net-dialup/wvdial/files/wvdial-1.60-as-needed.patch
+	http://ftp.eenet.ee/gentoo-portage/net-dialup/wvdial/files/wvdial-1.60-dirent.patch)
+url="http://alumnit.ca/wiki/index.php?page=WvDial"
+md5sums=('27fbbde89f8fd9f6e735a8efa5217fc9'
+         'd6349cd5821bb31818a6fc7b88b5d3c0'
+         'a05bb2dcc15319970a6df4d0780be2af'
+         '1e36958386dd0d14d7a34bea904665d9')
+
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  patch -Np1 -i ${srcdir}/wvdial-1.60-destdir.patch || return 1
+  patch -Np1 -i "$srcdir"/wvdial-1.60-as-needed.patch || return 1
+  patch -Np2 -i "$srcdir"/wvdial-1.60-dirent.patch || return 1
+  sed "s|prefix=.*|prefix=$startdir/pkg/usr|" -i Makefile || return 1
+  sed "s|PPPDIR=.*|PPPDIR=$startdir/pkg/etc/ppp/peers|" -i Makefile || return 1
+  make PREFIX=${pkgdir}/usr || return 1
+  make PREFIX=${pkgdir}/usr PPPDIR=${pkgdir}/etc/ppp/peers install
+  install -Dm644 COPYING.LIB ${pkgdir}/usr/share/licenses/${pkgname}/COPYING.LIB
+}

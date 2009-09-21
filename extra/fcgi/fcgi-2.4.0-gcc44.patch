@@ -1,0 +1,10 @@
+--- a/include/fcgio.h
++++ b/include/fcgio.h
+@@ -31,6 +31,7 @@
+ #define FCGIO_H
+
+ #include <iostream>
++#include <cstdio>
+
+ #include "fcgiapp.h"
+

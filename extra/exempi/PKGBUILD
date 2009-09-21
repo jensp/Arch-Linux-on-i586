@@ -1,0 +1,27 @@
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+# Contributor: André Klitzing <aklitzing@online.de>
+pkgname=exempi
+pkgver=2.1.0
+pkgrel=1
+pkgdesc="A library to parse XMP metadata"
+arch=(i586 i686 x86_64)
+url="http://libopenraw.freedesktop.org/wiki/Exempi"
+license=('custom:BSD')
+depends=('gcc-libs>=4.3.2' 'expat>=2.0.1' 'zlib')
+makedepends=('boost>=1.36.0')
+options=(!libtool)
+source=(http://libopenraw.freedesktop.org/download/${pkgname}-${pkgver}.tar.gz
+	http://filepile.fastit.net/gentoo/gentoo-portage/media-libs/exempi/files/exempi-2.1.0-gcc44.patch)
+md5sums=('30dfa5c394b4a3901c66f6e60e8b22e4'
+         '6be4322cdd40202de660d5f0ca957991')
+
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  patch -Np1 -i "$srcdir"/exempi-2.1.0-gcc44.patch
+  ./configure --prefix=/usr || return 1
+  make || return 1
+  make DESTDIR="${pkgdir}" install || return 1
+  install -d "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -m644 "${srcdir}/${pkgname}-${pkgver}/COPYING" \
+  	"${pkgdir}/usr/share/licenses/${pkgname}/" || return 1
+}

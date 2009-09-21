@@ -1,0 +1,26 @@
+# $Id: PKGBUILD 50626 2009-08-30 03:03:29Z allan $
+# Maintainer: Alexander Fehr <pizzapunk gmail com>
+# Contributor: Link Dupont <link@subpop.net>
+
+pkgname=mpc
+pkgver=0.17
+pkgrel=1
+pkgdesc="Minimalist command line interface to MPD"
+arch=('i586' 'i686' 'x86_64')
+url="http://mpd.wikia.com/wiki/Client:Mpc"
+license=('GPL2')
+depends=('glibc')
+options=('!emptydirs')
+source=(http://downloads.sourceforge.net/project/musicpd/mpc/${pkgver}/mpc-$pkgver.tar.bz2)
+md5sums=('3f642c2c2ad7a57a9be7a03351c8c558')
+
+build() {
+  cd "$srcdir/mpc-$pkgver"
+
+  ./configure --prefix=/usr || return 1
+  make || return 1
+  make DESTDIR="$pkgdir" install || return 1
+
+  # Install bash completion file
+  install -D -m644 doc/mpc-bashrc "$pkgdir/etc/bash_completion.d/mpc" || return 1
+}

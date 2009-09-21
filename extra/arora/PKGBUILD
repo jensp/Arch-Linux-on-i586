@@ -1,0 +1,21 @@
+# $Id: PKGBUILD 50686 2009-08-31 11:28:15Z pierre $
+# Maintainer: Pierre Schmitz <pierre@archlinux.de>
+
+pkgname=arora
+pkgver=0.9.0
+pkgrel=1
+pkgdesc='A cross platform web browser built using Qt and WebKit.'
+url='http://www.arora-browser.org'
+license=('GPL')
+arch=('i586' 'i686' 'x86_64')
+depends=('qt' 'openssl' 'xdg-utils')
+install='arora.install'
+source=("http://arora.googlecode.com/files/arora-${pkgver}.tar.gz")
+md5sums=('6473ddb24d65d468265c94710409937b')
+
+build() {
+	cd $srcdir/$pkgname-$pkgver
+	qmake PREFIX="/usr" "CONFIG-=debug" -r
+	make
+	make INSTALL_ROOT=$pkgdir install
+}

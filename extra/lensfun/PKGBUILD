@@ -1,0 +1,27 @@
+# $Id: PKGBUILD 31407 2009-03-26 20:55:39Z andrea $
+# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+
+pkgname=lensfun
+pkgver=0.2.3
+pkgrel=2
+pkgdesc="Database of photographic lenses and a library that allows advanced access to the database"
+arch=(i586 i686 x86_64)
+license=('LGPL3')
+source=(http://download.berlios.de/${pkgname}/${pkgname}-${pkgver}.tar.bz2
+	http://ftp.riken.go.jp/Linux/gentoo/media-libs/lensfun/files/lensfun-0.2.3-as-needed.patch
+	http://ftp.riken.go.jp/Linux/gentoo/media-libs/lensfun/files/lensfun-0.2.3-glibc-2.10.patch)
+url="http://lensfun.berlios.de/"
+depends=('glibc' 'glib2')
+
+build() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    patch -Np1 -i "$srcdir"/lensfun-0.2.3-as-needed.patch || return 1
+    patch -Np1 -i "$srcdir"/lensfun-0.2.3-glibc-2.10.patch || return 1
+    ./configure --prefix=/usr --libdir=/usr/lib || return 1
+    make all || return 1
+    make INSTALL_PREFIX=$pkgdir install || return 1
+}
+md5sums=('c5c04be4f53e3eef450ff4948d8f65b3'
+         '99f34d25b54aab60ba7346008749abd6'
+	 '593c956bb50d8009f66ff9496fa67fdf')
+

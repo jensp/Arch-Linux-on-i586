@@ -1,0 +1,18 @@
+diff -ru gtkam-0.1.16.1.orig/src/Makefile.am gtkam-0.1.16.1/src/Makefile.am
+--- gtkam-0.1.16.1.orig/src/Makefile.am	2009-09-15 11:10:10.623350989 +0000
++++ gtkam-0.1.16.1/src/Makefile.am	2009-09-15 11:11:04.987015036 +0000
+@@ -64,12 +64,12 @@
+ 	$(MY_CPPFLAGS)		\
+ 	$(GIMP_CFLAGS)
+ gtkam_gimp_LDADD = \
++	libgtkam.a
+ 	$(GIMP_LIBS)	\
+ 	$(LIBEXIF_LIBS)		\
+ 	$(LIBEXIF_GTK_LIBS) \
+ 	$(LIBGPHOTO2_LIBS)	\
+ 	$(BONOBO_LIBS)		\
+ 	$(GNOME_LIBS)		\
+-	$(INTLLIBS)		\
+-	libgtkam.a
++	$(INTLLIBS)		
+ endif

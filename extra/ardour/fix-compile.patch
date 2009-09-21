@@ -1,0 +1,31 @@
+--- gtk2_ardour/actions.cc.orig	2009-09-20 18:57:05.707368525 +0000
++++ gtk2_ardour/actions.cc	2009-09-20 18:58:00.465550570 +0000
+@@ -319,7 +319,7 @@
+ void
+ ActionManager::uncheck_toggleaction (const char * name)
+ {
+-	char *last_slash = strrchr (name, '/');
++	const char *last_slash = strrchr (name, '/');
+ 
+ 	if (last_slash == 0) {
+ 		fatal << string_compose (_("programmer error: %1 %2"), X_("illegal toggle action name"), name) << endmsg;
+@@ -334,7 +334,7 @@
+ 	memcpy (group_name, name + 10, len);
+ 	group_name[len] = '\0';
+ 
+-	char* action_name = last_slash + 1;
++	const char* action_name = last_slash + 1;
+ 
+         RefPtr<Action> act = get_action (group_name, action_name);
+ 	if (act) {
+--- libs/midi++2/midi.cc.orig	2009-09-20 19:00:23.853972670 +0000
++++ libs/midi++2/midi.cc	2009-09-20 19:00:31.507799526 +0000
+@@ -158,7 +158,7 @@
+ MIDI::decode_controller_name (const char *name)
+ 
+ {
+-	char *lparen;
++	const char *lparen;
+ 	size_t len;
+ 
+ 	if ((lparen = strrchr (name, '(')) != 0) {

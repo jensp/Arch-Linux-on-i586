@@ -1,0 +1,35 @@
+# $Id: PKGBUILD 39918 2009-05-23 04:38:11Z allan $
+# Maintainer: Dan McGee <dan@archlinux.org>
+
+pkgname=valgrind
+pkgver=3.4.1
+pkgrel=3
+pkgdesc="A tool to help find memory-management problems in programs"
+arch=('i586' 'i686' 'x86_64')
+license=('GPL')
+url="http://valgrind.org/"
+depends=('glibc>=2.10' 'glibc<2.11' 'perl')
+options=(!emptydirs)
+source=(http://valgrind.org/downloads/${pkgname}-${pkgver}.tar.bz2
+        valgrind-3.4.1-x86_64-ldso-strlen.patch)
+md5sums=('b5f039dd2271aaf9ae570ab4116f87c7'
+         'd35029d80ee6f10071cab9bc8c799042')
+sha256sums=('669ee7aab8a3a905520159b6d7be35d3911e1a4d7a67d90dc1c12c00693184a9'
+            '96786190dcfe60253295aeaea3a3b7ad2688779a538a09e331134ba077fe3072')
+
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+
+  patch -Np1 -i ${srcdir}/valgrind-3.4.1-x86_64-ldso-strlen.patch || return 1
+
+  # make sure our CFLAGS are respected
+  sed -i -e 's:^CFLAGS="-Wno-long-long":CFLAGS="$CFLAGS -Wno-long-long":' configure.in
+
+  if [ "${CARCH}" = "x86_64" ]; then
+    ./configure --prefix=/usr --mandir=/usr/share/man --enable-only64bit || return 1
+  else
+    ./configure --prefix=/usr --mandir=/usr/share/man || return 1
+  fi
+  make || return 1
+  make DESTDIR=${pkgdir} install || return 1
+}

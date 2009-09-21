@@ -1,0 +1,26 @@
+# $Id: PKGBUILD 27777 2009-02-25 21:14:01Z eric $
+# Contributor: Essien Ita Essien <essiene@datavibe.net>
+# Maintainer: damir <damir@archlinux.org>
+
+pkgname=libnids
+pkgver=1.23
+pkgrel=1
+pkgdesc="An implementation of an E-component of Network Intrusion Detection System."
+arch=(i586 i686 x86_64)
+url="http://libnids.sourceforge.net/"
+license=('GPL')
+depends=('libnet' 'libpcap>=1.0.0' 'glib2')
+makedepends=('pkgconfig')
+source=(http://downloads.sourceforge.net/sourceforge/libnids/$pkgname-$pkgver.tar.gz
+	http://svn.pardus.org.tr/pardus/2009/stable/network/library/libnids/files/libnids-1.23-elif.patch)
+md5sums=('af35e8ef403a0ca95df2da94db856428'
+         '4e6e1a8d7858ccc087a1ffcf55a66eb2')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  patch -Np1 -i "$srcdir"/libnids-1.23-elif.patch || return 1
+  ./configure --prefix=/usr --man=/usr/share/man || return 1
+  make static shared || return 1
+  make install_prefix=$pkgdir install _installshared || return 1
+  ln -s libnids.so.1.23 $pkgdir/usr/lib/libnids.so.1
+}

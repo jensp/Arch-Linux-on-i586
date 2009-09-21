@@ -1,0 +1,42 @@
+# $Id: PKGBUILD 32421 2009-03-31 10:55:16Z pierre $
+# Maintainer: Jan de Groot <jgc@archlinux.org>
+
+pkgname=cyrus-sasl-plugins
+pkgver=2.1.22
+pkgrel=10
+pkgdesc="Cyrus Simple Authentication Service Layer (SASL) library"
+arch=('i586' 'i686' 'x86_64')
+url="http://asg.web.cmu.edu/cyrus/download/"
+license=('custom')
+depends=('postgresql-libs>=8.2.4' 'heimdal>=1.2-1' 'libldap' 'libmysqlclient')
+source=(ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/cyrus-sasl-${pkgver}.tar.gz
+	http://mirrors.usc.edu/pub/linux/distributions/gentoo/dev-libs/cyrus-sasl/files/cyrus-sasl-2.1.22-gcc44.patch
+md5sums=('45dde9d19193ae9dd388eb68b2027bc9'
+         '5deb4d67b53ecba20c7887fc8fdebee1')
+
+build() {
+  cd ${startdir}/src/cyrus-sasl-${pkgver}
+  patch -Np1 -i "$srcdir"/cyrus-sasl-2.1.22-gcc44.patch || return 1
+#	unset CFLAGS
+	./configure --prefix=/usr \
+  	--sysconfdir=/etc \
+  	--localstatedir=/var \
+	--disable-login \
+	--disable-plain \
+	--enable-sql \
+	--disable-sqlite \
+	--enable-gssapi=/usr/include/gssapi \
+	--with-mysql=/usr \
+	--with-pgsql=/usr \
+	--enable-postgresql \
+	--enable-ldapdb \
+	--with-ldap=/usr
+  cd sasldb
+  make
+  cd ../plugins
+  make || return 1
+  make DESTDIR=${startdir}/pkg install || return 1
+  install -D -m644 ../COPYING ${startdir}/pkg/usr/share/licenses/${pkgname}/COPYING
+
+  rm -f ${startdir}/pkg/usr/lib/sasl2/libsasldb.*
+}

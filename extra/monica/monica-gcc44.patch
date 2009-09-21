@@ -1,0 +1,10 @@
+--- monica.cpp.orig	2009-09-16 23:48:35.283469136 +0000
++++ monica.cpp	2009-09-16 23:49:09.770125962 +0000
+@@ -21,6 +21,7 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <stdio.h>
+ 
+ const int RED   = 4;
+ const int GREEN = 2;

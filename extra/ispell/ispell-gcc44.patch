@@ -1,0 +1,11 @@
+--- correct.c.orig	2009-09-15 15:23:17.051805844 +0000
++++ correct.c	2009-09-15 15:24:04.668464551 +0000
+@@ -245,7 +245,7 @@
+ 		  struct flagent * sufent,
+ 		  ichar_t savearea[MAX_CAPS][INPUTWORDLEN + MAXAFFIXLEN],
+ 		  int * nsaved));
+-static char *	getline P ((char * buf, int bufsize));
++char *	getline P ((char * buf, int bufsize));
+ void		askmode P ((void));
+ void		copyout P ((unsigned char ** cc, int cnt));
+ static void	lookharder P ((unsigned char * string));

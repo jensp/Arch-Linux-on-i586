@@ -1,0 +1,21 @@
+# $Id: PKGBUILD 34172 2009-04-07 17:06:51Z andrea $
+# Contributor: tobias <tobias@archlinux.org>
+
+pkgname=libmpd
+pkgver=0.18.0
+pkgrel=1
+pkgdesc="Signal based wrapper around libmpdclient"
+arch=(i586 i686 x86_64)
+license=('GPL')
+url="http://gmpc.wikia.com/wiki/Gnome_Music_Player_Client"
+depends=('glib2')
+options=('!libtool')
+source=(http://download.sarine.nl/Programs/gmpc/${pkgver}/${pkgname}-${pkgver}.tar.gz)
+
+build() {
+  cd ${srcdir}/$pkgname-$pkgver
+  ./configure --prefix=/usr
+  make || return 1
+  make DESTDIR=${pkgdir} install
+}
+md5sums=('dd0c008d416e35c44d8e77c9899fb65b')

@@ -1,0 +1,25 @@
+# $Id: PKGBUILD 44718 2009-07-03 18:14:59Z jgc $
+# Maintainer: Alexander Baldeck <alexander@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+pkgname=libxaw
+pkgver=1.0.6
+pkgrel=1
+pkgdesc="X11 Athena Widget library"
+arch=(i586 i686 x86_64)
+license=('custom')
+url="http://xorg.freedesktop.org/"
+depends=('libxmu' 'libxpm')
+makedepends=('pkgconfig')
+options=('!libtool')
+source=(${url}/releases/individual/lib/libXaw-${pkgver}.tar.bz2)
+md5sums=('066218dceb82eb8da0e11d259ed3ceda')
+
+build() {
+  cd "${srcdir}/libXaw-${pkgver}"
+  ./configure --prefix=/usr --sysconfdir=/etc || return 1
+  make || return 1
+  make DESTDIR="${pkgdir}" install || return 1
+
+  install -m755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/" || return 1
+}
