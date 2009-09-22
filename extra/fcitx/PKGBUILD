@@ -1,25 +1,22 @@
-# $Id: PKGBUILD 32963 2009-04-03 07:13:36Z eric $
-# Maintainer: damir <damir@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: damir <damir@archlinux.org>
 # Contributor: damir <damir@archlinux.org>
 
 pkgname=fcitx
-pkgver=3.5.070703
-pkgrel=2
+pkgver=3.6.1
+pkgrel=1
 pkgdesc="Free Chinese Input Toy of X - Input Method Server for X window system (XIM)"
-arch=("i586" "i686" "x86_64")
+arch=('i586' 'i686' 'x86_64')
 url="http://www.fcitx.org/"
 license=('GPL')
-depends=('libxft' 'libxpm')
-source=(http://www.fcitx.org/download/$pkgname-${pkgver%.*}-${pkgver##*.}.tar.bz2
-	http://213.186.33.38/lv0/gentoo-portage/app-i18n/fcitx/files/fcitx-3.5_pre070703-asneeded.patch)
-md5sums=('1023b3febc5660101d75eb57b8948f69'
-         'd195db65af10fe2c05d592efc1d26b34')
+depends=('libxft' 'libxpm' 'libxtst')
+source=(http://www.fcitx.org/download/${pkgname}-${pkgver}.tar.bz2)
+md5sums=('1b8090ddda099ea9b381abcc2bfae24e')
+sha1sums=('a01b9e7c19855da149b019acf7cd84b3b8a48931')
 
 build() {
-  cd $srcdir/$pkgname-${pkgver%.*}
-  patch -Np1 -i "$srcdir"/fcitx-3.5_pre070703-asneeded.patch || return 1
-  autoreconf
+  cd "${srcdir}/${pkgname}-${pkgver}"
   ./configure --prefix=/usr || return 1
   make || return 1
-  make DESTDIR=$pkgdir install || return 1
+  make DESTDIR="${pkgdir}" install || return 1
 }
