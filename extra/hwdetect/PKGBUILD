@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 47687 2009-07-25 08:26:20Z tpowa $
+# $Id: PKGBUILD 51913 2009-09-13 16:35:17Z tpowa $
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 pkgname=hwdetect
-pkgver=2009.07
-pkgrel=2
+pkgver=2009.09
+pkgrel=5
 pkgdesc="Hardware detection script with loading modules and mkinitcpio.conf / rc.conf support"
 arch=(i586 i686 x86_64)
 license=('GPL')
@@ -16,4 +16,4 @@ source=(hwdetect)
 build() {
   install -D -m 755 $startdir/src/hwdetect $startdir/pkg/sbin/hwdetect
 }
-md5sums=('f8a30a2a422cfda4c230bca19bea811f')
+md5sums=('559ed19d4bdfca0d224192717638a566')
