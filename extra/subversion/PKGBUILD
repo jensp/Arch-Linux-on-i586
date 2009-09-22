@@ -1,16 +1,16 @@
-# $Id: PKGBUILD 50892 2009-09-02 19:21:51Z andrea $
-# Maintainer: Douglas Soares de Andrade <douglas@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
 # Contributor: Jason Chu <jason@archlinux.org>
 
 pkgname=subversion
 pkgver=1.6.5
-pkgrel=2
+pkgrel=3
 pkgdesc="Replacement for CVS, another versioning system (svn)"
 arch=(i586 i686 x86_64)
 license=('apache' 'bsd')
 depends=('neon>=0.28.2-2' 'apr-util>=1.3.2-2')
-makedepends=('heimdal>=1.2' 'apache>=2.2.11' 'python>=2.6.2'
-             'perl>=5.10.0-3' 'swig>=1.3.39' 'ruby' 'java-runtime' 'autoconf'
+makedepends=('heimdal>=1.2' 'apache>=2.2.13' 'python>=2.6.2'
+             'perl>=5.10.0-3' 'swig>=1.3.39' 'ruby>=1.9.1' 'java-runtime' 'autoconf'
              'sqlite3' 'db>=4.7.25' 'e2fsprogs' 'gnome-keyring' 'kdelibs')
 source=(http://subversion.tigris.org/downloads/$pkgname-$pkgver.tar.bz2
         svnserve svn svnserve.conf svnmerge.py
@@ -70,7 +70,7 @@ build() {
    install -D -m 644 ${srcdir}/subversion-$pkgver/COPYING ${pkgdir}/usr/share/licenses/$pkgname/LICENSE
 }
 md5sums=('1a53a0e72bee0bf814f4da83a9b6a636'
-         'c5a2e490b3e58c6bd2ca3a2e72b71845'
+         'a2b029e8385007ffb99b437b30521c90'
          'a0db6dd43af33952739b6ec089852630'
          'c459e299192552f61578f3438abf0664'
          '21bf3aa5b797ce98eba8307f30e9c070'
