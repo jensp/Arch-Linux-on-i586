@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 42410 2009-06-13 19:46:00Z paul $
-# Maintainer: Paul Mattal <paul@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Paul Mattal <paul@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=dnsmasq
-pkgver=2.49
+pkgver=2.50
 pkgrel=1
 pkgdesc="Lightweight, easy to configure DNS forwarder and DHCP server"
 url="http://www.thekelleys.org.uk/dnsmasq/doc.html"
@@ -15,8 +15,9 @@ backup=('etc/dnsmasq.conf')
 install=$pkgname.install
 source=("http://www.thekelleys.org.uk/$pkgname/$pkgname-$pkgver.tar.gz" \
         'rc.dnsmasq' "$pkgname-capability-config.patch")
-md5sums=('7ccc861d8a733474f9c0a0a127006ee9' 'e956eee1ec24212a3254d2b168187495'\
+md5sums=('f7b1e17c590e493039537434c57c9de7' 'e956eee1ec24212a3254d2b168187495'\
          'ef61cd6c3ce1fd0767a98b02975c9c9c')
+
 build() {
   cd $srcdir/$pkgname-$pkgver
 
