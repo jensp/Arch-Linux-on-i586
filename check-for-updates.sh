@@ -4,7 +4,8 @@ startdir=$(pwd)
 cd $repodir
 for repo in */
 do
-	echo Entering repo $repo
+	repo=$(echo $repo|awk -F"/" {'print $1'})
+	echo "[$repo]"
 	cd $repo
 	for package in */
 	do
@@ -16,12 +17,11 @@ do
 			#echo "$package :"
 			eval $(grep ^pkgver PKGBUILD)
 			eval $(grep ^pkgrel PKGBUILD)
+			eval $(grep ^pkgname PKGBUILD)
 			archver=$(curl http://www.archlinux.org/packages/$repo/i686/$package/ 2> /dev/null|grep '<h2 class="title">'|sed -e :a -e 's/<[^>]*>//g;/</N;//ba'|awk '{print $2}')
 			if [[ $(vercmp $archver $pkgver-$pkgrel) == "1" ]]
 			then
-				echo $package
-				echo Your version is $pkgver-$pkgrel
-				echo "SVN ver is $archver"
+				echo $pkgname old: ${pkgver}-${pkgrel} new: $archver
 			fi
 		fi
 		cd ..
@@ -29,3 +29,4 @@ do
 	cd ..
 done
 cd $startdir
+
