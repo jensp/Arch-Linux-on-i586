@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 42863 2009-06-18 21:25:24Z tpowa $
-# Maintainer: Paul Mattal <paul@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
 
 pkgname=postgresql-libs
-pkgver=8.3.7
-pkgrel=2
+pkgver=8.4.1
+pkgrel=1
 pkgdesc="Libraries for use with PostgreSQL"
 arch=(i586 i686 x86_64)
 license=('BSD')
@@ -55,4 +55,4 @@ build() {
 
   set +e
 }
-md5sums=('7b7e91a2221e55fe1b167e663217a96d')
+md5sums=('f2015af17bacbbfe140daf0d1067f9c9')
