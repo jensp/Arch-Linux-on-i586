@@ -1,29 +1,31 @@
-# $Id: PKGBUILD 356 2008-04-18 22:56:27Z aaron $
+# Maintainer: Jens Pranaitis <jens@chaox.net>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
-# Maintainer: arjan <arjan@archlinux.org>
+# Contributor: arjan <arjan@archlinux.org>
+
 pkgname=allegro
 pkgver=4.2.2
-pkgrel=1
-pkgdesc="Allegro is a multi-platform game library"
+pkgrel=3
+pkgdesc="Portable library mainly aimed at video game and multimedia programming"
 arch=(i586 i686 x86_64)
 url="http://alleg.sourceforge.net/"
 license=('custom')
-depends=('jack-audio-connection-kit' 'libxpm' 'libxxf86vm' 'libxxf86dga' \
-         'libxcursor')
+depends=('jack-audio-connection-kit' 'libxpm' 'libxxf86vm' 'libxxf86dga' 'libxcursor')
 options=('!makeflags')
-source=(http://downloads.sourceforge.net/alleg/${pkgname}-${pkgver}.tar.gz LICENSE
-	allegro-asm-fix.patch)
+source=(http://downloads.sourceforge.net/alleg/${pkgname}-${pkgver}.tar.gz
+        LICENSE)
 md5sums=('87ffb1def034e0ec29a9ad4a595cda7e'
-         'cd97e2992e8e66b9e6a449d832dc9c7a'
-         '2eed204bbed0f0cbb64ea55da72472f7')
+         'cd97e2992e8e66b9e6a449d832dc9c7a')
+
 build() {
-  cd ${startdir}/src/${pkgname}-${pkgver}
-  patch -Np1 -i "$srcdir"/allegro-asm-fix.patch || return 1
+  cd "${srcdir}/${pkgname}-${pkgver}"
   ./configure --prefix=/usr \
-              --enable-artsdigi=no \
-              --enable-esddigi=no \
-              --enable-sse=no
+      --enable-artsdigi=no \
+      --enable-esddigi=no \
+      --disable-asm \
+      --disable-mmx \
+      --disable-sse || return 1
   make || return 1
-  make prefix=${startdir}/pkg/usr install
-  install -D -m644 ../LICENSE ${startdir}/pkg/usr/share/licenses/${pkgname}/LICENSE
+  make DESTDIR="${pkgdir}" install || return 1
+  install -m755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -m644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/" || return 1
 }
