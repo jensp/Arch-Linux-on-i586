@@ -4,13 +4,13 @@
 
 pkgname=alpine
 pkgver=2.00
-pkgrel=5
+pkgrel=6
 _patchlevel=52
 pkgdesc="The Apache-licensed PINE (a tool for reading, sending, and managing electronic messages)"
 arch=('i586' 'i686' 'x86_64')
 url="http://www.washington.edu/alpine/"
 license=('APACHE')
-depends=('libldap' 'heimdal>=1.2.1' 'gettext')
+depends=('libldap>=2.4.18' 'heimdal>=1.2.1' 'gettext')
 optdepends=('aspell: for spell-checking support')
 provides=('pine')
 conflicts=('pine')
@@ -26,9 +26,9 @@ sha1sums=('dcbd3c5419954f484ccf706feaba31ce48cdebc4' '1d952e652e8ccf11867af12fe6
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
-  patch -Np1 -i "$srcdir"/all_${_patchlevel}.patch || return 1
-  patch -Np1 -i "$srcdir"/2.00-lpam.patch || return 1
-  patch -Np1 -i "$srcdir"/CVE-2008-5514.patch || return 1
+  patch -p1 < ../all_${_patchlevel}.patch || return 1
+  patch -p1 < ../2.00-lpam.patch || return 1
+  patch -p1 < ../CVE-2008-5514.patch || return 1
   ./configure --prefix=/usr --without-passfile --without-tcl \
     --disable-shared --with-system-pinerc=/etc/alpine.d/pine.conf \
     --with-system-fixed-pinerc=/etc/alpine.d/pine.conf.fixed || return 1
