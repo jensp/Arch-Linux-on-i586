@@ -1,5 +1,5 @@
-# $Id: PKGBUILD 46160 2009-07-14 01:29:23Z pierre $
-# Maintainer: tobias <tobias@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: tobias <tobias@archlinux.org>
 # Contributor: Tobias Kieslich <tobias@justdreams.de>
 
 # -----------  NOTE TO ALL USERS ------------
@@ -8,7 +8,7 @@
 
 pkgname=courier-mta
 pkgver=0.62.1
-pkgrel=1
+pkgrel=3
 pkgdesc="IMAP(s)/POP3(s) and SMTP Server with ML-manager, webmail and webconfig"
 arch=(i586 i686 x86_64)
 license=('GPL2')
@@ -27,7 +27,7 @@ makedepends=('apache>=2.2.9-3' 'pam>=1.0.1-2' 'expect' 'gnupg' 'libldap' 'fam')
 provides=('smtp-server' 'imap-server' 'pop3-server' 'courier-imap' 'courier-maildrop')
 conflicts=('courier-imap' 'smtp-server' 'imap-server' 'courier-maildrop' 'ucspi-tcp')
 options=('!libtool')
-install=(courier-mta.install)
+install=courier-mta.install
 source=(http://downloads.sourceforge.net/sourceforge/courier/courier-${pkgver}.tar.bz2 \
         courier-mta.rc.d courier-mta.conf.d )
 md5sums=('4437906c139a6a334ee9ae625730ae5e'
