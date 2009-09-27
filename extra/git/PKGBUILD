@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 50691 2009-09-01 02:42:27Z dan $
-# Maintainer: Dan McGee <dan@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Dan McGee <dan@archlinux.org>
 
 pkgname=git
-pkgver=1.6.4.2
+pkgver=1.6.4.4
 pkgrel=1
 pkgdesc="the fast distributed version control system"
 arch=(i586 i686 x86_64)
@@ -41,7 +41,7 @@ build() {
   rm -rf $pkgdir/usr/lib/perl5
 }
 
-md5sums=('05c41dc84eae47e3d4fe5b3dee9cc73c'
-         'e2bc0cfadb3ba76daee69bfb6dd299ad')
-sha256sums=('ad8f8fcff37db52031ab9b190fab6a910c59d83ca7322d3f92a8aeabf6029135'
-            '230c2c89e6d249abef8c83a37e664954abca9eac9aed97485f000f8926a78376')
+md5sums=('b150352782998ca1f84185e6af53ec26'
+         '5ee880f408f1299d541c273fb7e3c1db')
+sha256sums=('fc7e4d6c4172c62c93d5e974019f7193b03c8bc0a1c6f3a9fcc1d0928b808d7a'
+            'a2b2fb1aabdbb3e1e8ae9472523b9fef23c3e8a992bb8f68f17ad832a6e59c98')
