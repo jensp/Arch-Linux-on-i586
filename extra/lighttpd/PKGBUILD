@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 43099 2009-06-19 20:47:14Z pierre $
-# Maintainer: Pierre Schmitz <pierre@archlinux.de>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=lighttpd
 pkgver=1.4.23
-pkgrel=1
+pkgrel=2
 pkgdesc='a secure, fast, compliant and very flexible web-server'
 license=('custom')
 arch=('i586' 'i686' 'x86_64')
