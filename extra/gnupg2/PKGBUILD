@@ -1,12 +1,12 @@
-# $Id: PKGBUILD 42744 2009-06-18 19:36:17Z tpowa $
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=gnupg2
-pkgver=2.0.12
-pkgrel=1
+pkgver=2.0.13
+pkgrel=2
 pkgdesc="GNU Privacy Guard 2 - a PGP replacement tool"
-arch=(i586 i686 x86_64)
+arch=('i586' 'i686' 'x86_64')
 depends=('libldap' 'curl>=7.19.4' 'bzip2' 'zlib' 'libksba>=1.0.3' 'libgcrypt>=1.4.3-2'
 	'pth' 'libusb' 'libassuan>=1.0.5' 'texinfo' 'readline>=6.0.00')
 optdepends=('pinentry'
@@ -30,5 +30,4 @@ build() {
   mv ${pkgdir}/usr/share/gnupg{,2}
   rm -f ${pkgdir}/usr/share/info/dir
 }
-
-md5sums=('4718d8a8cd3eac100951d8b162cf537b')
+md5sums=('41bd7629d815b90c15b37bb31c2f07c0')
