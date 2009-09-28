@@ -1,13 +1,12 @@
-# $Id: PKGBUILD 39268 2009-05-14 15:04:08Z eric $
-
+# Maintainer: Jens Pranaitis <jens@chaox.net>
 pkgname=gnash-gtk
 pkgver=0.8.5
-pkgrel=2
+pkgrel=3
 pkgdesc="A GNU Flash movie player (gtk)"
 arch=('i586' 'i686' 'x86_64')
 url="http://www.gnu.org/software/gnash/"
 license=('GPL3')
-depends=("gnash-common=$pkgver" 'gtk2' 'gtkglext' 'libxmu')
+depends=("gnash-common=$pkgver-5" 'gtk2' 'gtkglext' 'libxmu')
 makedepends=('pkgconfig')
 options=('!libtool' '!emptydirs')
 source=(http://ftp.gnu.org/gnu/gnash/${pkgver}/gnash-${pkgver}.tar.bz2)
