@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 34129 2009-04-06 17:58:15Z tpowa $
-#Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=lablgtk2
 pkgver=2.12.0
-pkgrel=1
+pkgrel=2
 pkgdesc=" An Objective Caml interface to gtk2"
 arch=(i586 i686 x86_64)
 license=('LGPL2')
