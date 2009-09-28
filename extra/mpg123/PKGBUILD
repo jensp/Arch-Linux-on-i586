@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 43648 2009-06-27 00:20:26Z hugo $
-# Maintainer: Hugo Doria <hugo@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Hugo Doria <hugo@archlinux.org>
 # Contributor: William Rea <sillywilly@gmail.com>
 
 pkgname=mpg123
-pkgver=1.8.1
+pkgver=1.9.0
 pkgrel=1
 pkgdesc="A console based real time MPEG Audio Player for Layer 1, 2 and 3"
 arch=('i586' 'i686' 'x86_64')
@@ -17,7 +17,7 @@ provides=('mpg321')
 replaces=('mpg321')
 options=('libtool')
 source=(http://downloads.sourceforge.net/sourceforge/mpg123/${pkgname}-${pkgver}.tar.bz2)
-md5sums=('856893f14b29b1cddf4aba32469860b4')
+md5sums=('0ea1a5d45680c847a9594188f582d284')
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}
