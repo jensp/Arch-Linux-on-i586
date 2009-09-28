@@ -1,17 +1,17 @@
-# $Id: PKGBUILD 45149 2009-07-07 21:53:53Z giovanni $
-# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Gilles CHAUVIN <gcnweb@gmail.com>
 
 pkgname=live-media
-pkgver=2009.06.02
+pkgver=2009.09.21
 pkgrel=1
 pkgdesc="A set of C++ libraries for multimedia streaming"
 arch=('i586' 'i686' 'x86_64')
 license=('LGPL')
 url="http://live555.com/liveMedia"
 depends=('gcc-libs')
-source=(http://mirror.informatik.uni-mannheim.de/pub/mirrors/ftp.FreeBSD.org/ports/local-distfiles/nork/live.2009.06.02.tar.gz)
-md5sums=('088f848b64cef1d54034bc24cfa3c156')
+source=(ftp://ftp.archlinux.org/other/live-media/live.${pkgver}.tar.gz)
+md5sums=('1edc70c86bbbe7c6349f710295fe732c')
 
 build()
 {
