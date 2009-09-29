@@ -1,16 +1,19 @@
-# $Id: PKGBUILD 45470 2009-07-12 12:36:59Z daniel $
-# Maintainer: Daniel Isenmann <daniel@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Daniel Isenmann <daniel@archlinux.org>
 # Contributor: Rashif "Don Ray" Rahman <rayrashif@gmail.com>
 
 pkgname=wicd
-pkgver=1.6.2
-pkgrel=1
+pkgver=1.6.2.2
+pkgrel=2
 pkgdesc="New and alternative wireless/wired network management utility"
 arch=('i586' 'i686' 'x86_64')
 url="http://wicd.sourceforge.net/"
 license=('GPL2')
-depends=('python' 'dbus-python' 'pygtk' 'dhcpcd' 'wpa_supplicant' 'wireless_tools' 'ethtool' 'shared-mime-info' 'python-urwid' 'notification-daemon')
+depends=('python' 'dbus-python' 'pygtk' 'dhcpcd' 'wpa_supplicant' 'wireless_tools' 'ethtool' 'shared-mime-info' 'python-urwid')
 optdepends=('hicolor-icon-theme'
+            'gksu:		needed to access some preferences in gtk interface'
+            'notification-daemon: needed if you want notifications'
+            'python-notify:	needed if you want notifications'
             'python-wpactrl:	needed if you want to use the new experimental ioctrl backend'
 	    'python-iwscan:	needed if you want to use the new experimental ioctrl backend')
 conflicts=('wicd-svn')
@@ -18,11 +21,11 @@ install=wicd.install
 source=(http://downloads.sourceforge.net/sourceforge/$pkgname/$pkgname-$pkgver.tar.gz
         wicd-daemon
         wicd.desktop)
-md5sums=('29c418355610574e35490e340198ce08'
-         'f40e5f59998d0829707a7c9976afa8f8'
-         '60636b904efedb5f1b04b39747b16342')
 options=('emptydirs')
 backup=('etc/wicd/encryption/templates/active')
+md5sums=('acbbe695abf7ff83161c62317dfc7509'
+         'f40e5f59998d0829707a7c9976afa8f8'
+         '60636b904efedb5f1b04b39747b16342')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
