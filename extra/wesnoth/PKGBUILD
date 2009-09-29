@@ -1,25 +1,23 @@
-# $Id: PKGBUILD 35825 2009-04-17 13:17:12Z tpowa $
+# Maintainer: Jens Pranaitis <jens@chaox.net>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Jacobo Arvelo <unix4all@ya.com> 
-# Maintainer: Douglas Soares de Andrade <douglas@archlinux.org>
+# Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
 
 pkgname=wesnoth 
-pkgver=1.6.1
+pkgver=1.6.5
 pkgrel=1
 pkgdesc="A turn-based strategy game on a fantasy world" 
 arch=(i586 i686 x86_64)
 license=('GPL')
 url="http://www.wesnoth.org/" 
-depends=('sdl_ttf' 'sdl_net' 'sdl_mixer' 'sdl_image' 'libvorbis' 'fribidi' 'freetype2' 'gcc-libs' 'boost' 'python>=2.6' 'pango')
+depends=('sdl_ttf' 'sdl_net' 'sdl_mixer' 'sdl_image' 'libvorbis' 'fribidi' 'freetype2' 'gcc-libs' 'boost' 'pango')
 install=wesnoth.install
 source=(http://downloads.sourceforge.net/sourceforge/$pkgname/$pkgname-$pkgver.tar.bz2)
 
 build() { 
   cd $startdir/src/$pkgname-$pkgver 
-  CFLAGS="$CFLAGS -fno-strict-aliasing"
-  CXXFLAGS="$CFLAGS"
   ./configure --prefix=/usr --localstatedir=/var --enable-tools --enable-editor --enable-server
   make || return 1 
   make DESTDIR=$startdir/pkg install 
 }
-md5sums=('6777ec9bfb44b1553a4b7dd2d12c0713')
+md5sums=('493826bbd9ba355930765a7e8fe3749a')
