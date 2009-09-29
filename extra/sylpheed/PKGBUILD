@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 50641 2009-08-30 06:51:55Z allan $
-# Maintainer: Alexander Fehr <pizzapunk gmail com>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Alexander Fehr <pizzapunk gmail com>
 # Contributor: dorphell <dorphell@archlinux.org>
 
 pkgname=sylpheed
 pkgver=2.7.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Lightweight and user-friendly e-mail client"
 arch=('i586' 'i686' 'x86_64')
 url="http://sylpheed.sraoss.jp/en/"
