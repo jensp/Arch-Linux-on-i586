@@ -1,9 +1,9 @@
-# $Id: PKGBUILD 49552 2009-08-12 09:51:51Z pierre $
-# Maintainer: Pierre Schmitz <pierre@archlinux.de>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=qt
 pkgver=4.5.2
-pkgrel=6
+pkgrel=7
 _kdeqtver=5b7a2eb42acfdea07c6075556cb43e2c95852145
 pkgdesc='A cross-platform application and UI framework'
 arch=('i586' 'i686' 'x86_64')
