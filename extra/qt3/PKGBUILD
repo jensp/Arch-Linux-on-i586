@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 43767 2009-06-30 05:14:05Z allan $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: John Proctor <jproctor@prium.net>
 
 pkgname=qt3
 pkgver=3.3.8
-pkgrel=12
+pkgrel=13
 pkgdesc="The QT gui toolkit."
 arch=(i586 i686 x86_64)
 license=('GPL')
