@@ -1,14 +1,17 @@
-# $Id: PKGBUILD 50837 2009-09-02 05:13:03Z andyrtr $
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
+# Contributor: Francois Charette <francois.archlinux.org> 
 
 pkgname=redland
 pkgver=1.0.9
-pkgrel=1
-pkgdesc="Redland is a library that provides a high-level interface for the Resource Description Framework (RDF). It contains librdf."
+pkgrel=3
+pkgdesc="Library that provides a high-level interface to RDF data"
 url="http://librdf.org/"
 license="GPL"
 arch=('i586' 'i686' 'x86_64')
-depends=('raptor>=1.4.19' 'db>=4.7.25.4' 'postgresql-libs>=8.3.7-2' 'libmysqlclient>=5.1.37' 'sqlite3>=3.6.17' 'curl>=7.19.6' 'libxslt>=1.1.24-2' 'mpfr>=2.4.1' 'libtool')
+depends=('raptor>=1.4.19' 'db>=4.7.25.4' 'postgresql-libs>=8.4.1-1' 'libmysqlclient>=5.1.37' 'sqlite3>=3.6.17' 
+         'curl>=7.19.6' 'libxslt>=1.1.24-2' 'mpfr>=2.4.1' 'libtool' 'rasqal>=0.9.16')
+makedepends=('gtk-doc')
 source=(http://download.librdf.org/source/$pkgname-$pkgver.tar.gz
 	redland-1.0.9-sqlite-compile.patch
 	redland-1.0.9-storage-link.patch)
@@ -24,7 +27,7 @@ build() {
 	patch -Np1 -i ${srcdir}/redland-1.0.9-storage-link.patch || return 1 #from Gentoo
 	autoreconf
          ./configure --prefix=/usr --enable-release --disable-static \
-	             --with-raptor=system --with-sqlite=3
+	             --with-raptor=system --with-rasqal=system --with-sqlite=3
         make || return 1
         make DESTDIR=$startdir/pkg install || return 1
 }
