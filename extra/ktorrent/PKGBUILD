@@ -1,24 +1,24 @@
-# $Id: PKGBUILD 49904 2009-08-16 20:25:34Z ronald $
-# Maintainer: Ronald van Haren <ronald.archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Travis Willard <travisw@wmpub.ca>
 # Contributor: Georg Grabler <ggrabler@gmail.com>
 
 pkgname=ktorrent
-pkgver=3.2.3
+pkgver=3.2.4
 pkgrel=1
 pkgdesc="A BitTorrent program for KDE"
 arch=('i586' 'i686' 'x86_64')
 url="http://ktorrent.org"
 license=('GPL2')
-depends=('kdelibs>4' 'gmp' 'qca' 'libxft' 'kdebase-runtime' 'taglib')
+depends=('kdelibs>4' 'gmp' 'qca' 'libxft' 'kdebase-runtime' 'taglib' 'hicolor-icon-theme')
 # 'kdebase-runtime' is needed for some of the icons in the interface to show
 makedepends=('autoconf' 'perl' 'automoc4' 'cmake' 'kdepimlibs' 'kdebase-workspace')
 # 'kdebase-workspace' is needed to enable plasmoid building
-source=(ftp://mirror.q-mex.net/gentoo/distfiles/${pkgname}-${pkgver}-1.tar.bz2
+source=(http://ktorrent.org/downloads/${pkgver}/${pkgname}-${pkgver}.tar.bz2 \
 	httpserver.patch)
 install=ktorrent.install
 options=('libtool')
-md5sums=('f1430998c17925e4c6a08ce062f53ff2'
+md5sums=('e3c595c9ac667985764058902a1489ea'
          '1f25b94615b0bbfa0457c99fb20de3e6')
 
 build() {
