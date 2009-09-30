@@ -1,10 +1,10 @@
-# $Id: PKGBUILD 28974 2009-03-04 03:14:09Z eric $
-# Maintainer: Varun Acharya <varun@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Varun Acharya <varun@archlinux.org>
 # Contributor: Sebastien Piccand <sebcactus gmail com>
 
 pkgname=handbrake
 pkgver=0.9.3
-pkgrel=1
+pkgrel=2
 pkgdesc="HandBrake is a multiplatform, multithreaded DVD to MPEG-4 ripper/converter"
 arch=('i586' 'i686' 'x86_64')
 url="http://handbrake.m0k.org/"
