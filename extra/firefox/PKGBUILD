@@ -3,7 +3,7 @@
 
 pkgname=firefox
 pkgver=3.5.3
-pkgrel=1
+pkgrel=2
 _xulver=1.9.1.3
 pkgdesc="Standalone web browser from mozilla.org"
 arch=(i586 i686 x86_64)
@@ -35,8 +35,6 @@ build() {
   patch -Np1 -i "${srcdir}/firefox-version.patch" || return 1
 
   cp "${srcdir}/mozconfig" .mozconfig
-  unset CFLAGS
-  unset CXXFLAGS
 
   export LDFLAGS="-Wl,-rpath,/usr/lib/firefox-3.5"
 
