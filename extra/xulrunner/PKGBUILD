@@ -4,7 +4,7 @@
 pkgname=xulrunner
 pkgver=1.9.1.3
 _ffoxver=3.5.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Mozilla Runtime Environment"
 arch=(i586 i686 x86_64)
 license=('MPL' 'GPL' 'LGPL')
@@ -53,9 +53,7 @@ build() {
   #Force installation to the same path for every version
   patch -Np1 -i "${srcdir}/xulrunner-version.patch" || return 1
 
-  unset CFLAGS
-  unset CXXFLAGS
-  export LDFLAGS="-Wl,-rpath,/usr/lib/xulrunner-1.9.1"
+  export LDFLAGS="$LDFLAGS -Wl,-rpath,/usr/lib/xulrunner-1.9.1"
 
   make -j1 -f client.mk build MOZ_MAKE_FLAGS="$MAKEFLAGS" || return 1
   make -j1 DESTDIR="${pkgdir}" install || return 1
