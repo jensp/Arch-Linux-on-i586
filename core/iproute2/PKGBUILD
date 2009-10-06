@@ -1,15 +1,15 @@
+# Maintainer: Jens Pranaitis <jens@chaox.net>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Judd Vinet <jvinet@zeroflux.org>
 
 pkgname=iproute2
 pkgver=2.6.29
-pkgrel=1
+pkgrel=2
 pkgdesc="IP Routing Utilities"
 arch=('i586' 'i686' 'x86_64')
 license=('GPL2')
 url="http://www.linux-foundation.org/en/Net:Iproute2"
 depends=('linux-atm' 'perl')
-
 provides=('iproute')
 conflicts=('iproute')
 replaces=('iproute')
@@ -34,6 +34,7 @@ build() {
   patch -Np0 -R -i ${srcdir}/iftunnel.patch || return 1
 
   ./configure || return 1
+  sed -i "s|-O2|$CFLAGS|" Makefile || return 1
   make || return 1
   make DESTDIR=$pkgdir install || return 1
 
