@@ -1,10 +1,9 @@
-# $Id: PKGBUILD 43296 2009-06-21 19:21:38Z thayer $
+# Maintainer: Jens Pranaitis <jens@chaox.net>
 # Contributor: Thayer Williams <thayer@archlinux.org>
-# Maintainer: Thayer Williams <thayer@archlinux.org>
 
 pkgname=archlinux-artwork
 pkgver=1.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Official logos, icons, CD labels and other artwork for Arch Linux"
 arch=(any)
 url="http://www.archlinux.org/"
@@ -26,7 +25,7 @@ build() {
   install -m644 web/* $pkgdir/usr/share/archlinux/web/
 
   # add the custom license
-  mkdir -p $pkgdir/usr/share/licenses/custom/$pkgname/
-  install -m644 TRADEMARKS $pkgdir/usr/share/licenses/custom/$pkgname/
+  mkdir -p $pkgdir/usr/share/licenses/$pkgname/
+  install -m644 TRADEMARKS $pkgdir/usr/share/licenses/$pkgname/
 }
 
