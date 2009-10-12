@@ -1,7 +1,8 @@
+# Maintainer: Jens Pranaitis <jens@chaox.net>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 pkgname=kernel26-firmware
-pkgver=2.6.30
+pkgver=2.6.31
 pkgrel=1
 pkgdesc="The included firmware files of the Linux Kernel"
 arch=(i586 i686 x86_64)
@@ -13,9 +14,9 @@ source=(ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-$pkgver.tar.bz2
         config
         config.x86_64)
 options=(!makeflags)
-md5sums=('7a80058a6382e5108cdb5554d1609615'
-         'a803317c0eb88dd5a5060044e74be0ed'
-         '8563d05c70dcc44a954215984087a517')
+md5sums=('84c077a37684e4cbfa67b18154390d8a'
+         '128df067c46dc96fc184efdb822bb9ec'
+         '5e777ff68d871106d9bfa203f5e92750')
 
 build() {
   cd ${srcdir}/linux-$pkgver
