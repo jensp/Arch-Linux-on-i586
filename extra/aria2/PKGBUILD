@@ -1,20 +1,22 @@
-# $Id: PKGBUILD 50629 2009-08-30 06:02:08Z allan $
-# Maintainer: Alexander Fehr <pizzapunk gmail com>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: Alexander Fehr <pizzapunk gmail com>
 
 pkgname=aria2
-pkgver=1.6.0
+pkgver=1.6.2
 pkgrel=1
 pkgdesc="Download utility that supports HTTP(S), FTP, BitTorrent, and Metalink"
 arch=('i586' 'i686' 'x86_64')
 url="http://aria2.sourceforge.net/"
 license=('GPL')
 depends=('gnutls' 'libxml2' 'sqlite3' 'c-ares' 'ca-certificates')
-source=(http://downloads.sourceforge.net/project/aria2/aria2/aria2-${pkgver}/aria2-${pkgver}.tar.bz2)
-md5sums=('c97eb0d4f36aa76448ecd660b143c465')
+source=( http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.bz2)
+md5sums=('aa94152c01a11e75b77a6be6c15e81ff')
 
 build() {
-  cd "$srcdir/aria2-$pkgver"
-  ./configure --prefix=/usr --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt || return 1
+  cd "$srcdir/$pkgname-$pkgver"
+
+  ./configure --prefix=/usr \
+    --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt || return 1
   make || return 1
   make DESTDIR="$pkgdir" install || return 1
 }
