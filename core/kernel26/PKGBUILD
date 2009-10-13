@@ -33,7 +33,7 @@ source=(ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-$_basekernel.tar.bz2
 optdepends=('crda: to set the correct wireless channels of your country')
 md5sums=('84c077a37684e4cbfa67b18154390d8a'
          'a249dc5bfaf90d13248d4459d7dcecb3'
-         '07ceb97ba958bb99792a5edabe65629a'
+         '525de5816cb7f8fad634b572e6625708'
          '604e3014eff40b0304422c53129d6de7'
          '25584700a0a679542929c4bed31433b6')
 

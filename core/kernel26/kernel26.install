@@ -2,7 +2,7 @@
 # arg 2:  the old package version
 
 KERNEL_NAME=
-KERNEL_VERSION=2.6.31-ARCH-g32e40ff-dirty
+KERNEL_VERSION=2.6.31-ARCH
 
 post_install () {
   # updating module dependencies
