@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 30690 2009-03-21 11:11:45Z allan $
-# Maintainer: judd <jvinet@zeroflux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: judd <jvinet@zeroflux.org>
 pkgname=exim
 pkgver=4.69
-pkgrel=1
+pkgrel=2
 pkgdesc="A Message Transfer Agent"
 arch=(i586 i686 x86_64)
 url="http://www.exim.org/"
@@ -10,7 +10,7 @@ license=('GPL')
 backup=(etc/mail/aliases etc/mail/exim.conf \
         etc/logrotate.d/exim etc/conf.d/exim)
 install=exim.install
-depends=('db>=4.7' 'pcre' 'pam>=1.0.1-2' 'tcp_wrappers' 'openssl')
+depends=('db>=4.8' 'pcre' 'pam>=1.0.1-2' 'tcp_wrappers' 'openssl')
 makedepends=('sudo')
 provides=('smtp-server')
 conflicts=('smtp-server')
