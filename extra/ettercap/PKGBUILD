@@ -1,37 +1,31 @@
-# $Id: PKGBUILD 20314 2008-12-02 12:50:29Z tom $
+# Maintainer: Jens Pranaitis <jens@chaox.net>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
-# Maintainer: Kevin Piche <kevin@archlinux.org>
+# Contributor: Kevin Piche <kevin@archlinux.org>
 
 pkgname=ettercap
 pkgver=NG_0.7.3
 _origver=NG-0.7.3
-pkgrel=11
+pkgrel=13
 pkgdesc="A network sniffer/interceptor/logger for ethernet LANs - console"
-arch=(i586 i686 x86_64)
+arch=('i586' 'i686' 'x86_64')
 url="http://ettercap.sourceforge.net/"
 license=('GPL')
-depends=('ncurses' 'openssl' 'libpcap>=1.0.0' 'zlib' 'pcre' 'libtool>=2.2.4')
+depends=('ncurses' 'openssl' 'libpcap>=1.0.0' 'zlib' 'pcre' 'libtool>=2.2.4' 'libnet')
 makedepends=('libnet')
 options=(!libtool)
-source=(http://dl.sourceforge.net/sourceforge/$pkgname/$pkgname-$_origver.tar.gz
-	http://gentoo.mirror.at.stealer.net/portage/net-analyzer/ettercap/files/ettercap-0.7.3-as-needed.patch)
-md5sums=('28fb15cd024162c55249888fe1b97820'
-         'e3bf174f8719e24db5331413940a06ef')
+source=(http://downloads.sourceforge.net/$pkgname/$pkgname-$_origver.tar.gz)
+md5sums=('28fb15cd024162c55249888fe1b97820')
 
 build() {
-  cd $startdir/src/$pkgname-$_origver
+  cd ${srcdir}/${pkgname}-${_origver}
   unset LDFLAGS
-  #patch -Np1 -i "$srcdir"/ettercap-0.7.3-as-needed.patch || return 1
-  autoreconf
-  libtoolize
   ./configure --prefix=/usr --sysconfdir=/etc --mandir=/usr/share/man --enable-plugins \
       --enable-https --disable-gtk
-  sed -i 's|LTDL_SHLIB_EXT|".so"|' src/ec_plugins.c || return 1
   make || return 1
   make DESTDIR=$startdir/pkg install || return 1
   cd plug-ins
   make || return 1
-  make DESTDIR=$startdir/pkg install || return 1
-  chmod 755 $startdir/pkg/usr/lib/ettercap/*
-  chmod 755 $startdir/pkg/usr/bin/ettercap
+  make DESTDIR=${pkgdir} install || return 1
+  chmod 755 ${pkgdir}/usr/lib/ettercap/*
+  chmod 755 ${pkgdir}/usr/bin/ettercap
 }
