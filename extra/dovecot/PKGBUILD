@@ -1,17 +1,17 @@
-# Maintainer: Jens Pranaitis <jens@chaox.net>#
+# Maintainer: Jens Pranaitis <jens@chaox.net>
 # Contributor: Paul Mattal <paul@mattal.com>
 # Contributor: Federico Quagliata (quaqo) <quaqo@despammed.com>
 # Contributor: GARETTE Emmanuel <gnunux at laposte dot net>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=dovecot
-pkgver=1.2.5
+pkgver=1.2.6
 pkgrel=1
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 arch=('i586' 'i686' 'x86_64')
 url="http://dovecot.org/"
 license=("LGPL")
-depends=("pam>=1.0.4" "libmysqlclient>=5.1.38" "postgresql-libs>=8.4.1-1" "sqlite3>=3.6.18" "db>=4.7.25.4"\
+depends=("pam>=1.0.4" "libmysqlclient>=5.1.38" "postgresql-libs>=8.4.1-1" "sqlite3>=3.6.18" "db>=4.8"
 	 "heimdal>=1.2.1-6" 'libcap>=2.17' 'bzip2')
 optdepends=('libldap: ldap plugin')
 makedepends=('libldap>=2.4.18-1')
@@ -19,7 +19,7 @@ provides=('imap-server' 'pop3-server')
 options=('!libtool')
 install=$pkgname.install
 source=(http://dovecot.org/releases/1.2/${pkgname}-${pkgver}.tar.gz dovecot.sh)
-md5sums=('8b057903d6a527dac964b51c5638c625'
+md5sums=('807666f1a112e7379c4dbb57c9ce4899'
          'd020d43eab4ded6fb379dadc570a9490')
 
 build() {
