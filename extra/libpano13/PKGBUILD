@@ -1,19 +1,19 @@
-# $Id: PKGBUILD 43842 2009-06-30 06:14:32Z allan $
-# Maintainer: tobias <tobias@archlinux.org>
+# Maintainer: Jens Pranaitis <jens@chaox.net>
+# Contributor: tobias <tobias@archlinux.org>
 # Contributor: Tobias Kieslich <tobias@justdreams.de>
 
 pkgname=libpano13
-pkgver=2.9.12
+pkgver=2.9.14
 pkgrel=2
 pkgdesc="basic library to calculate panoramical pictures - core functions of the panotools"
 url="http://panotools.sourceforge.net/"
 arch=(i586 i686 x86_64)
 license=('GPL2')
 depends=('libpng' 'libtiff>=3.8.2-5')
-makedepends=('java-environment')
+makedepends=('openjdk6')
 options=('!libtool')
-source=(http://dl.sourceforge.net/sourceforge/panotools/$pkgname-$pkgver.tar.gz)
-md5sums=('3ca4f7bfe5a7b0acd86901d502dee8ca')
+source=(http://downloads.sourceforge.net/sourceforge/panotools/$pkgname-$pkgver.tar.gz)
+md5sums=('fb011aead63974e630739ed55d75a4b0')
 
 build() {
   cd $startdir/src/$pkgname-$pkgver
