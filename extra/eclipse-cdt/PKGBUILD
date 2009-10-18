@@ -1,8 +1,8 @@
-# $Id: PKGBUILD 43531 2009-06-25 04:39:38Z paul $
+# Maintainer: Jens Pranaitis <jens@chaox.net>
 # Contributor: Paul Mattal <paul@mattal.com>
-# Maintainer: Paul Mattal <paul@archlinux.org>
+# Contributor: Paul Mattal <paul@archlinux.org>
 pkgname=eclipse-cdt
-pkgver=6.0.0
+pkgver=6.0.1
 pkgrel=1
 pkgdesc="C/C++ Plugin for Eclipse"
 arch=(i586 i686 x86_64)
@@ -23,4 +23,4 @@ build() {
   cp -a $startdir/src/features $installdir/eclipse || return 1
   cp -a $startdir/src/plugins $installdir/eclipse || return 1
 }
-md5sums=('c9fd014f0db665e0d723f382144bea74')
+md5sums=('91d4d99728fda96b476182fcb04a6290')
